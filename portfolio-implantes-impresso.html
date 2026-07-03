@@ -1,0 +1,2031 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>Portfólio de Implantes — Instituto Sorrisi</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Nunito:wght@300;400;600;700;800;900&display=swap');
+
+/* ══════════════════════════════════════
+   VARIÁVEIS DA MARCA
+   ══════════════════════════════════════ */
+:root {
+  --navy:       #3C1970;
+  --navy-d:     #2a0f52;
+  --navy-l:     #4e2490;
+  --pink:       #E388AD;
+  --pink-l:     #FCD3E6;
+  --pink-d:     #c4648f;
+  --teal:       #20A3C7;
+  --teal-l:     #5cbfda;
+  --cream:      #F7F2E4;
+  --cream-2:    #f0e8d2;
+  --white:      #ffffff;
+  --text:       #3a3a5c;
+  --text-l:     #7a7a9a;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: 'Nunito', sans-serif;
+  color: var(--text);
+  background: #ccc;
+  -webkit-print-color-adjust: exact;
+  print-color-adjust: exact;
+}
+
+/* ── PÁGINA ── */
+.page {
+  width: 210mm;
+  min-height: 297mm;
+  background: white;
+  margin: 8mm auto;
+  position: relative;
+  overflow: hidden;
+  page-break-after: always;
+  display: flex;
+  flex-direction: column;
+}
+
+h1,h2,h3,h4 { font-family: 'Playfair Display', serif; font-weight: 400; }
+
+/* ── BOTÃO IMPRIMIR ── */
+.btn-print {
+  position: fixed; top: 16px; right: 16px;
+  background: var(--navy); color: white;
+  border: none; padding: 10px 22px;
+  border-radius: 6px; font-family: 'Nunito', sans-serif;
+  font-size: 10pt; font-weight: 700; cursor: pointer;
+  z-index: 9999; box-shadow: 0 4px 14px rgba(60,25,112,0.4);
+}
+.btn-print:hover { background: var(--pink-d); }
+
+@media print {
+  body { background: white; }
+  .page { margin: 0; }
+  .btn-print { display: none; }
+}
+
+/* ════════════════════════════════════════════
+   PG 1 — CAPA EMOCIONAL
+   ════════════════════════════════════════════ */
+.capa {
+  background: var(--cream);
+  min-height: 297mm;
+  display: flex;
+  flex-direction: column;
+}
+
+.capa-top {
+  flex: 1;
+  position: relative;
+  overflow: hidden;
+  min-height: 185mm;
+}
+
+.capa-top img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 20%;
+  display: block;
+}
+
+.capa-top-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(42,15,82,0.25) 0%,
+    rgba(42,15,82,0.05) 40%,
+    rgba(42,15,82,0.7) 100%
+  );
+}
+
+.capa-logo-box {
+  position: absolute;
+  top: 10mm;
+  left: 12mm;
+}
+.capa-logo-box img { height: 12mm; }
+
+.capa-headline {
+  position: absolute;
+  bottom: 10mm;
+  left: 12mm;
+  right: 12mm;
+  color: white;
+}
+
+.capa-headline .eyebrow {
+  font-family: 'Nunito', sans-serif;
+  font-size: 7.5pt;
+  font-weight: 700;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--pink-l);
+  margin-bottom: 5mm;
+  display: block;
+}
+
+.capa-headline h1 {
+  font-size: 28pt;
+  line-height: 1.15;
+  color: white;
+  margin-bottom: 4mm;
+}
+
+.capa-headline h1 em {
+  font-style: italic;
+  color: var(--pink-l);
+}
+
+.capa-headline .lead {
+  font-size: 10pt;
+  font-weight: 300;
+  color: rgba(255,255,255,0.85);
+  line-height: 1.65;
+  max-width: 140mm;
+}
+
+.capa-bottom {
+  background: var(--navy);
+  padding: 8mm 12mm;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 6mm;
+}
+
+.capa-bottom .clinica-nome {
+  font-family: 'Playfair Display', serif;
+  font-size: 13pt;
+  color: white;
+  font-style: italic;
+}
+
+.capa-bottom .clinica-sub {
+  font-family: 'Nunito', sans-serif;
+  font-size: 7.5pt;
+  color: rgba(255,255,255,0.6);
+  margin-top: 2px;
+  letter-spacing: 0.05em;
+}
+
+.capa-bottom .capa-contato {
+  text-align: right;
+  font-family: 'Nunito', sans-serif;
+  font-size: 8.5pt;
+  color: white;
+  line-height: 1.7;
+}
+
+/* ════════════════════════════════════════════
+   PG 2 — POR QUE O SORRISO IMPORTA (gancho emocional)
+   ════════════════════════════════════════════ */
+.pg-emocional {
+  padding: 0;
+  min-height: 297mm;
+  display: flex;
+  flex-direction: column;
+}
+
+.emocional-foto {
+  height: 120mm;
+  position: relative;
+  overflow: hidden;
+}
+
+.emocional-foto img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  object-position: center 30%;
+}
+
+.emocional-foto-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to right, rgba(42,15,82,0.85) 0%, rgba(42,15,82,0.2) 60%, transparent 100%);
+}
+
+.emocional-foto-text {
+  position: absolute;
+  left: 12mm;
+  top: 50%;
+  transform: translateY(-50%);
+  color: white;
+  max-width: 110mm;
+}
+
+.emocional-foto-text .quote {
+  font-family: 'Playfair Display', serif;
+  font-size: 18pt;
+  font-style: italic;
+  line-height: 1.35;
+  margin-bottom: 5mm;
+}
+
+.emocional-foto-text .quote-author {
+  font-family: 'Nunito', sans-serif;
+  font-size: 8.5pt;
+  color: var(--pink-l);
+  letter-spacing: 0.1em;
+}
+
+.emocional-body {
+  flex: 1;
+  padding: 10mm 12mm;
+  background: var(--cream);
+}
+
+.emocional-body h2 {
+  font-size: 18pt;
+  color: var(--navy);
+  line-height: 1.25;
+  margin-bottom: 4mm;
+}
+
+.emocional-body h2 em {
+  font-style: italic;
+  color: var(--pink-d);
+}
+
+.divbar { width: 38px; height: 3px; border-radius: 2px; background: var(--pink); margin: 4mm 0 6mm; }
+.divbar.teal { background: var(--teal); }
+.divbar.white { background: white; }
+
+.emocional-body p {
+  font-size: 9.5pt;
+  line-height: 1.8;
+  color: var(--text);
+  margin-bottom: 4mm;
+}
+
+.sintomas-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3.5mm;
+  margin-top: 5mm;
+}
+
+.sintoma-item {
+  background: white;
+  border-radius: 6px;
+  padding: 5mm 6mm;
+  display: flex;
+  align-items: flex-start;
+  gap: 4mm;
+  border-left: 3px solid var(--pink);
+}
+
+.sintoma-item .si-icon {
+  font-size: 14pt;
+  flex-shrink: 0;
+  margin-top: 1mm;
+}
+
+.sintoma-item .si-texto {
+  font-size: 8.5pt;
+  line-height: 1.55;
+  color: var(--text);
+  font-weight: 600;
+}
+
+.sintoma-item .si-sub {
+  font-size: 7.5pt;
+  color: var(--text-l);
+  font-weight: 400;
+  margin-top: 1mm;
+}
+
+.emocional-cta {
+  background: var(--navy);
+  border-radius: 6px;
+  padding: 6mm 8mm;
+  margin-top: 6mm;
+  color: white;
+  font-size: 9.5pt;
+  line-height: 1.65;
+  font-style: italic;
+  font-family: 'Playfair Display', serif;
+  text-align: center;
+}
+
+/* ════════════════════════════════════════════
+   PG 3 — O QUE É IMPLANTE (educação)
+   ════════════════════════════════════════════ */
+.pg-edu {
+  min-height: 297mm;
+  display: flex;
+  flex-direction: column;
+}
+
+.pg-edu-header {
+  background: var(--teal);
+  padding: 10mm 12mm 9mm;
+  color: white;
+}
+
+.pg-edu-header .eyebrow {
+  font-family: 'Nunito', sans-serif;
+  font-size: 7pt;
+  font-weight: 700;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.7);
+  margin-bottom: 3mm;
+  display: block;
+}
+
+.pg-edu-header h2 {
+  font-size: 20pt;
+  color: white;
+  line-height: 1.2;
+  margin-bottom: 3mm;
+}
+
+.pg-edu-header .lead {
+  font-size: 9pt;
+  color: rgba(255,255,255,0.85);
+  line-height: 1.65;
+  max-width: 150mm;
+}
+
+.componentes {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0;
+  border-bottom: 1px solid var(--cream-2);
+}
+
+.componente {
+  padding: 7mm 6mm;
+  text-align: center;
+  border-right: 1px solid var(--cream-2);
+  background: white;
+}
+.componente:last-child { border-right: none; }
+
+.componente .comp-icon { font-size: 20pt; margin-bottom: 3mm; display: block; }
+.componente .comp-nome {
+  font-family: 'Nunito', sans-serif;
+  font-size: 9pt;
+  font-weight: 800;
+  color: var(--navy);
+  margin-bottom: 2mm;
+}
+.componente .comp-desc {
+  font-size: 7.5pt;
+  color: var(--text);
+  line-height: 1.55;
+}
+
+.edu-body {
+  flex: 1;
+  padding: 7mm 12mm 10mm;
+}
+
+.edu-body h3 {
+  font-size: 12pt;
+  color: var(--navy);
+  margin-bottom: 4mm;
+}
+
+.beneficios-2col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3mm;
+}
+
+.beneficio {
+  display: flex;
+  align-items: flex-start;
+  gap: 3.5mm;
+  background: var(--cream);
+  border-radius: 5px;
+  padding: 4mm 5mm;
+}
+
+.beneficio .b-check {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: var(--teal);
+  color: white;
+  font-size: 9pt;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+.beneficio .b-text {
+  font-size: 8.5pt;
+  line-height: 1.55;
+  color: var(--text);
+}
+
+.implante-vs {
+  margin-top: 6mm;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  gap: 0;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.vs-col {
+  padding: 6mm;
+}
+
+.vs-col.sem { background: #fff0f5; }
+.vs-col.com { background: #e8f8f0; }
+
+.vs-col h4 {
+  font-family: 'Nunito', sans-serif;
+  font-size: 8.5pt;
+  font-weight: 800;
+  margin-bottom: 3.5mm;
+}
+
+.vs-col.sem h4 { color: #c0392b; }
+.vs-col.com h4 { color: #27ae60; }
+
+.vs-col ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 2mm;
+}
+
+.vs-col ul li {
+  font-size: 7.5pt;
+  line-height: 1.5;
+  color: var(--text);
+  padding-left: 3.5mm;
+  position: relative;
+}
+
+.vs-col.sem ul li::before { content: '✕'; position: absolute; left: 0; color: #c0392b; font-size: 7pt; top: 1px; }
+.vs-col.com ul li::before { content: '✓'; position: absolute; left: 0; color: #27ae60; font-size: 7pt; top: 1px; }
+
+.vs-divider {
+  background: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 3mm;
+  font-family: 'Nunito', sans-serif;
+  font-size: 9pt;
+  font-weight: 900;
+  color: var(--text-l);
+}
+
+.edu-foto {
+  margin: 5mm 12mm 10mm;
+  height: 42mm;
+  border-radius: 6px;
+  overflow: hidden;
+  position: relative;
+}
+
+.edu-foto img { width: 100%; height: 100%; object-fit: cover; }
+
+.edu-foto-label {
+  position: absolute;
+  bottom: 3mm; left: 3mm;
+  background: rgba(42,15,82,0.8);
+  color: white;
+  font-family: 'Nunito', sans-serif;
+  font-size: 7pt;
+  padding: 2px 7px;
+  border-radius: 3px;
+}
+
+/* ════════════════════════════════════════════
+   PG 4 — ETAPAS DO TRATAMENTO
+   ════════════════════════════════════════════ */
+.pg-etapas {
+  min-height: 297mm;
+  display: flex;
+  flex-direction: column;
+  padding: 10mm 12mm 10mm;
+}
+
+.pg-etapas .eyebrow {
+  font-family: 'Nunito', sans-serif;
+  font-size: 7pt;
+  font-weight: 700;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--teal);
+  margin-bottom: 3mm;
+  display: block;
+}
+
+.pg-etapas h2 {
+  font-size: 20pt;
+  color: var(--navy);
+  line-height: 1.2;
+  margin-bottom: 2mm;
+}
+
+.pg-etapas > p {
+  font-size: 9pt;
+  line-height: 1.7;
+  color: var(--text);
+  margin-bottom: 7mm;
+  max-width: 150mm;
+}
+
+.timeline {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  gap: 0;
+}
+
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: 7mm;
+  top: 8mm;
+  bottom: 8mm;
+  width: 2px;
+  background: linear-gradient(to bottom, var(--teal), var(--pink));
+}
+
+.tl-step {
+  display: flex;
+  align-items: flex-start;
+  gap: 5mm;
+  padding: 0 0 6mm 0;
+  position: relative;
+}
+
+.tl-dot {
+  width: 16mm;
+  height: 16mm;
+  border-radius: 50%;
+  background: var(--navy);
+  color: white;
+  font-family: 'Nunito', sans-serif;
+  font-size: 10pt;
+  font-weight: 900;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  position: relative;
+  z-index: 2;
+  box-shadow: 0 0 0 3px white, 0 0 0 5px var(--navy);
+}
+
+.tl-dot.teal { background: var(--teal); box-shadow: 0 0 0 3px white, 0 0 0 5px var(--teal); }
+.tl-dot.pink  { background: var(--pink-d); box-shadow: 0 0 0 3px white, 0 0 0 5px var(--pink-d); }
+
+.tl-content {
+  flex: 1;
+  background: var(--cream);
+  border-radius: 6px;
+  padding: 5mm 7mm;
+  margin-top: 2mm;
+}
+
+.tl-content h4 {
+  font-family: 'Nunito', sans-serif;
+  font-size: 9.5pt;
+  font-weight: 800;
+  color: var(--navy);
+  margin-bottom: 2mm;
+}
+
+.tl-content p {
+  font-size: 8.5pt;
+  line-height: 1.6;
+  color: var(--text);
+}
+
+.tl-content .tl-detalhe {
+  margin-top: 3mm;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2mm;
+}
+
+.tl-tag {
+  background: white;
+  border: 1px solid var(--cream-2);
+  border-radius: 3px;
+  padding: 1.5mm 4mm;
+  font-size: 7pt;
+  color: var(--text-l);
+  font-weight: 600;
+}
+
+.tomo-box {
+  background: linear-gradient(135deg, var(--teal) 0%, var(--teal-l) 100%);
+  border-radius: 6px;
+  padding: 6mm 8mm;
+  color: white;
+  display: flex;
+  align-items: center;
+  gap: 5mm;
+  margin-top: 5mm;
+}
+
+.tomo-box .tb-icon { font-size: 22pt; flex-shrink: 0; }
+
+.tomo-box h4 {
+  font-family: 'Nunito', sans-serif;
+  font-size: 9.5pt;
+  font-weight: 800;
+  margin-bottom: 1.5mm;
+}
+
+.tomo-box p { font-size: 8.5pt; line-height: 1.5; opacity: 0.9; }
+
+/* ════════════════════════════════════════════
+   PG 5 — NOSSAS ESPECIALIDADES
+   ════════════════════════════════════════════ */
+.pg-equipe {
+  min-height: 297mm;
+  display: flex;
+  flex-direction: column;
+  background: var(--cream);
+}
+
+.pg-equipe-header {
+  background: var(--navy);
+  padding: 10mm 12mm 9mm;
+  color: white;
+}
+
+.pg-equipe-header .eyebrow {
+  font-family: 'Nunito', sans-serif;
+  font-size: 7pt;
+  font-weight: 700;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--pink-l);
+  margin-bottom: 3mm;
+  display: block;
+}
+
+.pg-equipe-header h2 {
+  font-size: 20pt;
+  color: white;
+  line-height: 1.2;
+  margin-bottom: 3mm;
+}
+
+.pg-equipe-header p {
+  font-size: 9pt;
+  color: rgba(255,255,255,0.8);
+  line-height: 1.6;
+}
+
+.equipe-cards {
+  flex: 1;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+}
+
+.equipe-card {
+  display: flex;
+  flex-direction: column;
+  border-right: 1px solid var(--cream-2);
+}
+.equipe-card:last-child { border-right: none; }
+
+.equipe-card-foto {
+  height: 88mm;
+  position: relative;
+  overflow: hidden;
+  background: var(--navy-d);
+}
+
+.equipe-card-foto img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+}
+
+.equipe-card-foto-overlay {
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  padding: 10mm 7mm 5mm;
+  background: linear-gradient(to top, rgba(42,15,82,0.95) 0%, transparent 100%);
+}
+
+.equipe-card-foto-overlay .ec-nome {
+  font-family: 'Playfair Display', serif;
+  font-size: 13pt;
+  color: white;
+  font-style: italic;
+}
+
+.equipe-card-foto-overlay .ec-espec {
+  font-family: 'Nunito', sans-serif;
+  font-size: 7.5pt;
+  color: var(--pink-l);
+  margin-top: 1.5mm;
+  letter-spacing: 0.08em;
+}
+
+.equipe-card-body {
+  flex: 1;
+  padding: 7mm;
+  background: white;
+}
+
+.equipe-card-body p {
+  font-size: 8.5pt;
+  line-height: 1.65;
+  color: var(--text);
+  margin-bottom: 4mm;
+}
+
+.credencial-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 2.5mm;
+}
+
+.credencial-list li {
+  display: flex;
+  align-items: center;
+  gap: 3mm;
+  font-size: 8pt;
+  color: var(--text);
+}
+
+.credencial-list li::before {
+  content: '';
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--pink);
+  flex-shrink: 0;
+}
+
+.cro-pill {
+  display: inline-block;
+  background: var(--teal);
+  color: white;
+  font-family: 'Nunito', sans-serif;
+  font-size: 8pt;
+  font-weight: 800;
+  padding: 2.5mm 6mm;
+  border-radius: 4px;
+  margin-top: 4mm;
+  letter-spacing: 0.1em;
+}
+
+/* ════════════════════════════════════════════
+   PG 6 — CASO CLÍNICO REAL
+   ════════════════════════════════════════════ */
+.pg-caso {
+  min-height: 297mm;
+  display: flex;
+  flex-direction: column;
+}
+
+.pg-caso-header {
+  background: var(--navy);
+  padding: 9mm 12mm 8mm;
+  color: white;
+}
+
+.pg-caso-header .eyebrow {
+  font-family: 'Nunito', sans-serif;
+  font-size: 7pt;
+  font-weight: 700;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--teal-l);
+  margin-bottom: 3mm;
+  display: block;
+}
+
+.pg-caso-header h2 {
+  font-size: 19pt;
+  color: white;
+  line-height: 1.2;
+  margin-bottom: 2mm;
+}
+
+.pg-caso-header p {
+  font-size: 8.5pt;
+  color: rgba(255,255,255,0.7);
+}
+
+.pg-caso-body {
+  flex: 1;
+  padding: 7mm 12mm;
+}
+
+.caso-badges {
+  display: flex;
+  gap: 3mm;
+  margin-bottom: 6mm;
+  flex-wrap: wrap;
+}
+
+.badge {
+  background: var(--cream);
+  border-radius: 4px;
+  padding: 2.5mm 5mm;
+  font-family: 'Nunito', sans-serif;
+  font-size: 7.5pt;
+  font-weight: 700;
+  color: var(--navy);
+}
+
+.badge span {
+  color: var(--text-l);
+  font-weight: 400;
+}
+
+.caso-principal {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3mm;
+  margin-bottom: 5mm;
+}
+
+.caso-img {
+  border-radius: 6px;
+  overflow: hidden;
+  position: relative;
+  height: 62mm;
+}
+
+.caso-img img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+}
+
+.caso-img-label {
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  padding: 7mm 6mm 4mm;
+  background: linear-gradient(to top, rgba(0,0,0,0.7) 0%, transparent 100%);
+  font-family: 'Nunito', sans-serif;
+  font-size: 7.5pt;
+  font-weight: 800;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: white;
+}
+
+.caso-desc {
+  font-size: 9pt;
+  line-height: 1.75;
+  color: var(--text);
+  margin-bottom: 5mm;
+}
+
+.caso-desc strong { color: var(--navy); }
+
+.caso-minis {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2.5mm;
+  margin-bottom: 5mm;
+}
+
+.caso-mini {
+  height: 32mm;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.caso-mini img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+}
+
+.caso-resultado {
+  background: linear-gradient(135deg, var(--teal) 0%, var(--navy-l) 100%);
+  border-radius: 6px;
+  padding: 6mm 8mm;
+  color: white;
+  display: flex;
+  align-items: center;
+  gap: 5mm;
+}
+
+.caso-resultado .cr-icon { font-size: 20pt; flex-shrink: 0; }
+
+.caso-resultado p {
+  font-size: 9pt;
+  line-height: 1.6;
+}
+
+.caso-resultado strong { color: var(--pink-l); }
+
+/* ════════════════════════════════════════════
+   PG 7 — DEPOIMENTOS
+   ════════════════════════════════════════════ */
+.pg-dep {
+  min-height: 297mm;
+  background: var(--cream);
+  display: flex;
+  flex-direction: column;
+}
+
+.pg-dep-header {
+  background: var(--pink-d);
+  padding: 10mm 12mm 9mm;
+  color: white;
+}
+
+.pg-dep-header .eyebrow {
+  font-family: 'Nunito', sans-serif;
+  font-size: 7pt;
+  font-weight: 700;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.75);
+  margin-bottom: 3mm;
+  display: block;
+}
+
+.pg-dep-header h2 {
+  font-size: 20pt;
+  color: white;
+  line-height: 1.2;
+  margin-bottom: 3mm;
+}
+
+.pg-dep-header p {
+  font-size: 9pt;
+  color: rgba(255,255,255,0.8);
+}
+
+.dep-list {
+  flex: 1;
+  padding: 8mm 12mm 10mm;
+  display: flex;
+  flex-direction: column;
+  gap: 5mm;
+}
+
+.dep-card {
+  background: white;
+  border-radius: 8px;
+  padding: 7mm;
+  box-shadow: 0 2px 10px rgba(60,25,112,0.07);
+  display: flex;
+  flex-direction: column;
+}
+
+.dep-aspas {
+  font-family: 'Playfair Display', serif;
+  font-size: 30pt;
+  color: var(--pink-l);
+  line-height: 0.7;
+  margin-bottom: 3mm;
+}
+
+.dep-texto {
+  font-size: 9.5pt;
+  line-height: 1.75;
+  color: var(--text);
+  font-style: italic;
+  flex: 1;
+  margin-bottom: 5mm;
+}
+
+.dep-rodape {
+  display: flex;
+  align-items: center;
+  gap: 4mm;
+  border-top: 1px solid var(--cream-2);
+  padding-top: 4mm;
+}
+
+.dep-avatar {
+  width: 10mm;
+  height: 10mm;
+  border-radius: 50%;
+  background: var(--navy);
+  color: white;
+  font-family: 'Nunito', sans-serif;
+  font-size: 9pt;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.dep-info .dep-nome {
+  font-family: 'Nunito', sans-serif;
+  font-size: 9pt;
+  font-weight: 700;
+  color: var(--navy);
+}
+
+.dep-info .dep-trat {
+  font-size: 7.5pt;
+  color: var(--text-l);
+  margin-top: 1px;
+}
+
+.dep-stars {
+  margin-left: auto;
+  color: var(--pink);
+  font-size: 10pt;
+  letter-spacing: 1px;
+}
+
+/* ════════════════════════════════════════════
+   PG 8 — INVESTIMENTO (preços reais)
+   ════════════════════════════════════════════ */
+.pg-invest {
+  min-height: 297mm;
+  display: flex;
+  flex-direction: column;
+}
+
+.pg-invest-header {
+  background: var(--navy);
+  padding: 10mm 12mm 9mm;
+  color: white;
+}
+
+.pg-invest-header .eyebrow {
+  font-family: 'Nunito', sans-serif;
+  font-size: 7pt;
+  font-weight: 700;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--pink-l);
+  margin-bottom: 3mm;
+  display: block;
+}
+
+.pg-invest-header h2 {
+  font-size: 20pt;
+  color: white;
+  line-height: 1.2;
+  margin-bottom: 3mm;
+}
+
+.pg-invest-header p {
+  font-size: 9pt;
+  color: rgba(255,255,255,0.8);
+  line-height: 1.6;
+  max-width: 150mm;
+}
+
+.invest-body {
+  flex: 1;
+  padding: 8mm 12mm 10mm;
+}
+
+.invest-nota {
+  background: var(--cream);
+  border-left: 3px solid var(--teal);
+  border-radius: 0 5px 5px 0;
+  padding: 4mm 7mm;
+  font-size: 8.5pt;
+  line-height: 1.6;
+  color: var(--text);
+  margin-bottom: 6mm;
+}
+
+.invest-nota strong { color: var(--navy); }
+
+.tabela {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.tabela thead tr {
+  background: var(--navy);
+  color: white;
+}
+
+.tabela thead th {
+  font-family: 'Nunito', sans-serif;
+  font-size: 8pt;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  padding: 4mm 5mm;
+  text-align: left;
+}
+
+.tabela thead th:last-child { text-align: right; }
+
+.tabela tbody tr:nth-child(even) { background: var(--cream); }
+.tabela tbody tr:nth-child(odd)  { background: white; }
+
+.tabela td {
+  font-family: 'Nunito', sans-serif;
+  font-size: 8.5pt;
+  padding: 3.5mm 5mm;
+  color: var(--text);
+  border-bottom: 1px solid var(--cream-2);
+}
+
+.tabela td.preco {
+  text-align: right;
+  font-weight: 700;
+  color: var(--navy);
+}
+
+.tabela tr.grupo-header td {
+  background: var(--navy-d) !important;
+  color: white;
+  font-family: 'Nunito', sans-serif;
+  font-size: 7.5pt;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 3mm 5mm;
+}
+
+.tabela tr.total-row td {
+  background: var(--pink) !important;
+  color: white;
+  font-weight: 800;
+  font-size: 9pt;
+}
+
+.tabela tr.total-row td.preco {
+  color: white;
+}
+
+.pagamento-row {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 3mm;
+  margin-top: 6mm;
+}
+
+.pag-card {
+  background: var(--cream);
+  border-radius: 5px;
+  padding: 5mm;
+  text-align: center;
+}
+
+.pag-card .pag-icon { font-size: 16pt; margin-bottom: 2.5mm; display: block; }
+
+.pag-card h4 {
+  font-family: 'Nunito', sans-serif;
+  font-size: 8.5pt;
+  font-weight: 800;
+  color: var(--navy);
+  margin-bottom: 1.5mm;
+}
+
+.pag-card p { font-size: 7.5pt; color: var(--text-l); line-height: 1.4; }
+
+.invest-garantia {
+  margin-top: 5mm;
+  background: linear-gradient(135deg, var(--navy) 0%, var(--navy-l) 100%);
+  border-radius: 6px;
+  padding: 6mm 8mm;
+  color: white;
+  font-size: 9pt;
+  line-height: 1.65;
+  text-align: center;
+}
+
+.invest-garantia strong { color: var(--pink-l); }
+
+/* ════════════════════════════════════════════
+   PG 9 — CONTRACAPA / PRÓXIMO PASSO
+   ════════════════════════════════════════════ */
+.pg-cta {
+  min-height: 297mm;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
+}
+
+.pg-cta-foto {
+  flex: 1;
+  position: relative;
+  overflow: hidden;
+  min-height: 155mm;
+}
+
+.pg-cta-foto img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 15%;
+}
+
+.pg-cta-foto-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, rgba(42,15,82,0.3) 0%, rgba(42,15,82,0.85) 100%);
+}
+
+.pg-cta-foto-content {
+  position: absolute;
+  bottom: 10mm;
+  left: 12mm;
+  right: 12mm;
+  color: white;
+  text-align: center;
+}
+
+.pg-cta-foto-content h2 {
+  font-size: 24pt;
+  line-height: 1.2;
+  margin-bottom: 4mm;
+}
+
+.pg-cta-foto-content h2 em { font-style: italic; color: var(--pink-l); }
+
+.pg-cta-foto-content p {
+  font-size: 10pt;
+  font-weight: 300;
+  color: rgba(255,255,255,0.85);
+  line-height: 1.65;
+  max-width: 130mm;
+  margin: 0 auto;
+}
+
+.pg-cta-bottom {
+  background: var(--navy);
+  padding: 10mm 12mm;
+}
+
+.pg-cta-logo { margin-bottom: 7mm; }
+.pg-cta-logo img { height: 11mm; }
+
+.contatos-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4mm;
+  margin-bottom: 8mm;
+}
+
+.contato-item {
+  display: flex;
+  align-items: center;
+  gap: 4mm;
+}
+
+.contato-item .ci-circle {
+  width: 10mm;
+  height: 10mm;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12pt;
+  flex-shrink: 0;
+}
+
+.contato-item .ci-label {
+  font-family: 'Nunito', sans-serif;
+  font-size: 6.5pt;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.5);
+  margin-bottom: 1px;
+}
+
+.contato-item .ci-valor {
+  font-family: 'Nunito', sans-serif;
+  font-size: 9.5pt;
+  font-weight: 700;
+  color: white;
+}
+
+.cta-hr {
+  border: none;
+  border-top: 1px solid rgba(255,255,255,0.15);
+  margin: 6mm 0;
+}
+
+.cta-footer {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+}
+
+.cta-footer-text .slogan {
+  font-family: 'Nunito', sans-serif;
+  font-size: 8.5pt;
+  color: rgba(255,255,255,0.55);
+  margin-bottom: 2mm;
+}
+
+.cta-footer-text .instituto {
+  font-family: 'Playfair Display', serif;
+  font-size: 11pt;
+  font-style: italic;
+  color: var(--pink-l);
+}
+
+.qr-box {
+  width: 28mm;
+  height: 28mm;
+  background: white;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  padding: 3mm;
+}
+
+.qr-box .qr-ic { font-size: 14pt; color: var(--navy); margin-bottom: 2mm; }
+.qr-box p { font-family: 'Nunito', sans-serif; font-size: 6pt; color: var(--navy); font-weight: 800; letter-spacing: 0.05em; line-height: 1.4; }
+
+</style>
+</head>
+<body>
+
+<button class="btn-print" onclick="window.print()">🖨️ Imprimir / PDF</button>
+
+<!-- ══════════════════════════════════
+     PG 1 — CAPA
+     ══════════════════════════════════ -->
+<div class="page capa">
+  <div class="capa-top">
+    <img src="fotos/capa-1.jpeg" alt="Paciente com sorriso transformado">
+    <div class="capa-top-overlay"></div>
+    <div class="capa-logo-box">
+      <img src="logo-white.png" alt="Instituto Sorrisi">
+    </div>
+    <div class="capa-headline">
+      <span class="eyebrow">Portfólio de Implantodontia</span>
+      <h1>Devolvemos o seu sorriso.<br>E com ele, <em>tudo mais.</em></h1>
+      <p class="lead">
+        Descubra como o implante dentário pode transformar não apenas o seu sorriso,
+        mas a sua mastigação, sua fala, sua autoconfiança — e a sua vida.
+        Este guia foi feito para você entender tudo, com clareza e sem pressa.
+      </p>
+    </div>
+  </div>
+  <div class="capa-bottom">
+    <div>
+      <div class="clinica-nome">Instituto Sorrisi Odontologia e Saúde</div>
+      <div class="clinica-sub">Rio das Ostras / RJ · @institutosorrisi</div>
+    </div>
+    <div class="capa-contato">
+      <div>(22) 99849-6156</div>
+      <div>Est. Prof. Leandro Faria Sarzedas, 369 · Sala 06</div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════
+     PG 2 — GANCHO EMOCIONAL
+     ══════════════════════════════════ -->
+<div class="page pg-emocional">
+  <div class="emocional-foto">
+    <img src="fotos/recepcao-1.jpeg" alt="Atendimento humanizado">
+    <div class="emocional-foto-overlay"></div>
+    <div class="emocional-foto-text">
+      <div class="quote">
+        "Parei de sorrir nas fotos.<br>
+        Mastigava só de um lado.<br>
+        Tinha vergonha de falar perto das pessoas."
+      </div>
+      <div class="quote-author">— Realidade de quem convive com dentes perdidos</div>
+    </div>
+  </div>
+
+  <div class="emocional-body">
+    <h2>A perda de um dente vai<br><em>muito além do estético.</em></h2>
+    <div class="divbar"></div>
+    <p>
+      Quando um dente é perdido, o impacto vai muito além da aparência.
+      O osso começa a se reabsorver. Os dentes vizinhos migram.
+      A mastigação fica comprometida. E o sorriso — que era livre e espontâneo —
+      passa a ser controlado, escondido, evitado.
+    </p>
+    <p>
+      Muita gente convive com isso por anos sem saber que existe uma solução definitiva,
+      natural e acessível. O implante dentário é essa solução.
+    </p>
+
+    <div class="sintomas-grid">
+      <div class="sintoma-item">
+        <div class="si-icon">😬</div>
+        <div>
+          <div class="si-texto">Vergonha ao sorrir</div>
+          <div class="si-sub">Sorriso controlado, mão na frente da boca</div>
+        </div>
+      </div>
+      <div class="sintoma-item">
+        <div class="si-icon">🦷</div>
+        <div>
+          <div class="si-texto">Dificuldade de mastigar</div>
+          <div class="si-sub">Evita alimentos duros, mastiga só de um lado</div>
+        </div>
+      </div>
+      <div class="sintoma-item">
+        <div class="si-icon">📉</div>
+        <div>
+          <div class="si-texto">Perda de osso progressiva</div>
+          <div class="si-sub">O osso sem raiz se reabsorve com o tempo</div>
+        </div>
+      </div>
+      <div class="sintoma-item">
+        <div class="si-icon">😟</div>
+        <div>
+          <div class="si-texto">Impacto na autoestima</div>
+          <div class="si-sub">Afeta relacionamentos, emprego, confiança</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="emocional-cta">
+      "Existe uma solução definitiva. E ela começa com uma conversa."
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════
+     PG 3 — O QUE É IMPLANTE
+     ══════════════════════════════════ -->
+<div class="page pg-edu">
+  <div class="pg-edu-header">
+    <span class="eyebrow">Entenda o Tratamento</span>
+    <h2>O que é um Implante Dentário?</h2>
+    <p class="lead">
+      O implante é uma raiz artificial de titânio que se integra ao osso — e sobre ela,
+      fixamos uma coroa que reproduz a aparência e a função do seu dente natural.
+      O resultado é tão natural que nem o paciente percebe a diferença.
+    </p>
+  </div>
+
+  <div class="componentes">
+    <div class="componente">
+      <span class="comp-icon">🔩</span>
+      <div class="comp-nome">1. Implante</div>
+      <div class="comp-desc">Raiz de titânio inserida no osso. Se integra ao organismo pelo processo de osseointegração — processo natural e indolor.</div>
+    </div>
+    <div class="componente">
+      <span class="comp-icon">🔗</span>
+      <div class="comp-nome">2. Pilar</div>
+      <div class="comp-desc">Peça intermediária que conecta o implante à coroa. Garante estabilidade e transmite as forças da mastigação ao osso.</div>
+    </div>
+    <div class="componente">
+      <span class="comp-icon">🦷</span>
+      <div class="comp-nome">3. Coroa</div>
+      <div class="comp-desc">A "parte do dente" visível. Feita sob medida para reproduzir cor, forma e textura — natural e imperceptível.</div>
+    </div>
+  </div>
+
+  <div class="edu-body">
+    <h3>Por que o implante é a melhor escolha?</h3>
+    <div class="beneficios-2col">
+      <div class="beneficio">
+        <div class="b-check">✓</div>
+        <div class="b-text">Funciona como dente natural — coma o que quiser</div>
+      </div>
+      <div class="beneficio">
+        <div class="b-check">✓</div>
+        <div class="b-text">Preserva o osso — impede a reabsorção</div>
+      </div>
+      <div class="beneficio">
+        <div class="b-check">✓</div>
+        <div class="b-text">Não prejudica os dentes vizinhos</div>
+      </div>
+      <div class="beneficio">
+        <div class="b-check">✓</div>
+        <div class="b-text">Higiene simples, igual ao dente natural</div>
+      </div>
+      <div class="beneficio">
+        <div class="b-check">✓</div>
+        <div class="b-text">Durabilidade de décadas com manutenção</div>
+      </div>
+      <div class="beneficio">
+        <div class="b-check">✓</div>
+        <div class="b-text">Estética impecável — ninguém precisa saber</div>
+      </div>
+    </div>
+
+    <div class="implante-vs" style="margin-top:6mm;">
+      <div class="vs-col sem">
+        <h4>❌ Sem implante</h4>
+        <ul>
+          <li>Osso se reabsorve com o tempo</li>
+          <li>Dentes vizinhos migram e inclinam</li>
+          <li>Mastigação comprometida</li>
+          <li>Próteses removíveis instáveis</li>
+          <li>Impacto na aparência facial</li>
+        </ul>
+      </div>
+      <div class="vs-divider">VS</div>
+      <div class="vs-col com">
+        <h4>✅ Com implante</h4>
+        <ul>
+          <li>Osso preservado e estimulado</li>
+          <li>Dentes vizinhos protegidos</li>
+          <li>Mastigação 100% funcional</li>
+          <li>Fixo, estável, sem cola</li>
+          <li>Aparência natural e jovem</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="edu-foto">
+    <img src="fotos/antes-depois-estetica.jpg" alt="Resultado de implante">
+    <div class="edu-foto-label">Resultado real — naturalidade e função completa</div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════
+     PG 4 — ETAPAS DO TRATAMENTO
+     ══════════════════════════════════ -->
+<div class="page pg-etapas">
+  <span class="eyebrow">Passo a Passo</span>
+  <div class="divbar teal"></div>
+  <h2>Como funciona o seu tratamento</h2>
+  <p>
+    No Instituto Sorrisi, cada etapa é cuidadosamente planejada para garantir
+    segurança, previsibilidade e o melhor resultado para o seu caso específico.
+    Nenhuma etapa é pulada — você é acompanhado do início ao fim.
+  </p>
+
+  <div class="timeline">
+    <div class="tl-step">
+      <div class="tl-dot">1</div>
+      <div class="tl-content">
+        <h4>Consulta de Avaliação</h4>
+        <p>Conversa detalhada sobre seu histórico, objetivos e saúde geral. Exame clínico completo. Sem julgamentos — só escuta verdadeira.</p>
+        <div class="tl-detalhe">
+          <span class="tl-tag">Gratuita</span>
+          <span class="tl-tag">Sem compromisso</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="tl-step">
+      <div class="tl-dot teal">2</div>
+      <div class="tl-content">
+        <h4>Tomografia Computadorizada</h4>
+        <p>Mapeamento completo do osso, nervos e estruturas. Realizada na Radiológica parceira. É a base de todo o planejamento — garante precisão cirúrgica e segurança máxima.</p>
+        <div class="tl-detalhe">
+          <span class="tl-tag">Base do planejamento</span>
+          <span class="tl-tag">Alta precisão</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="tl-step">
+      <div class="tl-dot">3</div>
+      <div class="tl-content">
+        <h4>Planejamento Individualizado</h4>
+        <p>O Dr. Ringo analisa a tomografia e define a posição ideal do implante — diâmetro, comprimento, angulação. Cada caso é único e tratado como tal.</p>
+      </div>
+    </div>
+
+    <div class="tl-step">
+      <div class="tl-dot teal">4</div>
+      <div class="tl-content">
+        <h4>Cirurgia de Instalação</h4>
+        <p>Instalação do implante de titânio sob anestesia local. Procedimento preciso, seguro e com mínimo desconforto. Quando necessário, enxerto ósseo é realizado na mesma sessão.</p>
+        <div class="tl-detalhe">
+          <span class="tl-tag">Anestesia local</span>
+          <span class="tl-tag">Alta no mesmo dia</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="tl-step">
+      <div class="tl-dot">5</div>
+      <div class="tl-content">
+        <h4>Osseointegração — Cicatrização</h4>
+        <p>3 a 6 meses para o osso se integrar ao implante. Você é acompanhado em consultas de controle durante todo esse período.</p>
+      </div>
+    </div>
+
+    <div class="tl-step">
+      <div class="tl-dot pink">6</div>
+      <div class="tl-content">
+        <h4>🎉 Fase Protética — Seu Novo Sorriso</h4>
+        <p>Confecção e instalação da coroa definitiva. Ajustes de oclusão, cor e forma. O resultado: um dente belo, funcional e indistinguível do natural.</p>
+        <div class="tl-detalhe">
+          <span class="tl-tag">Resultado definitivo</span>
+          <span class="tl-tag">Sorriso transformado</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="tomo-box">
+    <div class="tb-icon">🔬</div>
+    <div>
+      <h4>Planejamento por Tomografia Computadorizada</h4>
+      <p>Todo implante realizado no Instituto Sorrisi é baseado em tomografia — garantindo precisão, segurança e resultado previsível para o seu caso.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════
+     PG 5 — ESPECIALISTAS
+     ══════════════════════════════════ -->
+<div class="page pg-equipe">
+  <div class="pg-equipe-header">
+    <span class="eyebrow">Quem cuida de você</span>
+    <h2>Nossa Equipe de Especialistas</h2>
+    <p>
+      Você não é atendido por um generalista. Cada profissional do Instituto Sorrisi
+      tem formação específica na sua área — garantindo o mais alto padrão técnico
+      em cada etapa do seu tratamento.
+    </p>
+  </div>
+
+  <div class="equipe-cards">
+    <!-- Dra. Vanessa -->
+    <div class="equipe-card">
+      <div class="equipe-card-foto">
+        <img src="fotos/dentista-atendendo.jpg" alt="Dra. Vanessa Scotta">
+        <div class="equipe-card-foto-overlay">
+          <div class="ec-nome">Dra. Vanessa Scotta</div>
+          <div class="ec-espec">Diretora · Responsável Técnica</div>
+        </div>
+      </div>
+      <div class="equipe-card-body">
+        <p>
+          Cirurgiã-dentista desde 2010, especialista em ortodontia e fundadora
+          do Instituto Sorrisi. Invisalign Doctor credenciada e Parceira SouSmile.
+          Lidera a equipe com foco em qualidade e atendimento humanizado.
+        </p>
+        <ul class="credencial-list">
+          <li>Cirurgiã-Dentista · Desde 2010</li>
+          <li>Especialista em Ortodontia</li>
+          <li>Invisalign Doctor · Desde 2019</li>
+          <li>Parceira SouSmile · Desde 2024</li>
+          <li>Diretora e RT — Instituto Sorrisi</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Dr. Ringo -->
+    <div class="equipe-card">
+      <div class="equipe-card-foto">
+        <img src="Revista com nosso portifólio/Implante dentario/Ringo/WhatsApp Image 2026-06-12 at 11.30.28.jpeg" alt="Dr. Ringo Star Begnami">
+        <div class="equipe-card-foto-overlay">
+          <div class="ec-nome">Dr. Ringo Star Begnami</div>
+          <div class="ec-espec">Implantodontista</div>
+        </div>
+      </div>
+      <div class="equipe-card-body">
+        <p>
+          Especialista em Implantodontia responsável por todos os procedimentos
+          cirúrgicos e reabilitações com implantes. Planejamento individualizado,
+          precisão cirúrgica e resultados que superam expectativas.
+        </p>
+        <ul class="credencial-list">
+          <li>Especialista em Implantodontia</li>
+          <li>Registro ativo no CRO-RJ</li>
+          <li>Implantes unitários e Protocolos</li>
+          <li>Enxertos e levantamento de seio</li>
+        </ul>
+        <span class="cro-pill">CRO-RJ 45101</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════
+     PG 6 — CASO CLÍNICO
+     ══════════════════════════════════ -->
+<div class="page pg-caso">
+  <div class="pg-caso-header">
+    <span class="eyebrow">Resultado Real · Dr. Ringo Star Begnami</span>
+    <h2>De antes a depois —<br>um sorriso transformado</h2>
+    <p>Caso clínico real realizado no Instituto Sorrisi · Rio das Ostras/RJ</p>
+  </div>
+
+  <div class="pg-caso-body">
+    <div class="caso-badges">
+      <div class="badge">Tratamento: <span>Implante dentário</span></div>
+      <div class="badge">Especialista: <span>Dr. Ringo Begnami</span></div>
+      <div class="badge">Local: <span>Rio das Ostras/RJ</span></div>
+    </div>
+
+    <div class="caso-principal">
+      <div class="caso-img">
+        <img src="Revista com nosso portifólio/Implante dentario/Ringo/WhatsApp Image 2026-06-12 at 11.31.31.jpeg" alt="Antes">
+        <div class="caso-img-label">Antes</div>
+      </div>
+      <div class="caso-img">
+        <img src="Revista com nosso portifólio/Implante dentario/Ringo/WhatsApp Image 2026-06-14 at 14.18.22.jpeg" alt="Depois">
+        <div class="caso-img-label">Depois</div>
+      </div>
+    </div>
+
+    <p class="caso-desc">
+      <strong>Planejamento e execução:</strong> Após avaliação clínica completa e análise detalhada de tomografia
+      computadorizada, o Dr. Ringo realizou o planejamento tridimensional do caso e a instalação do implante com precisão cirúrgica.
+      O resultado combina funcionalidade completa e estética absolutamente natural — devolvendo ao paciente
+      confiança, qualidade de vida e o prazer de sorrir sem esconder.
+    </p>
+
+    <div class="caso-minis">
+      <div class="caso-mini">
+        <img src="Revista com nosso portifólio/Implante dentario/Ringo/WhatsApp Image 2026-06-12 at 11.33.17.jpeg" alt="Processo">
+      </div>
+      <div class="caso-mini">
+        <img src="Revista com nosso portifólio/Implante dentario/Ringo/WhatsApp Image 2026-06-12 at 11.35.11.jpeg" alt="Componente">
+      </div>
+      <div class="caso-mini">
+        <img src="Revista com nosso portifólio/Implante dentario/Ringo/WhatsApp Image 2026-06-14 at 14.18.28.jpeg" alt="Resultado 1">
+      </div>
+      <div class="caso-mini">
+        <img src="Revista com nosso portifólio/Implante dentario/Ringo/WhatsApp Image 2026-06-14 at 14.18.29.jpeg" alt="Resultado 2">
+      </div>
+    </div>
+
+    <div class="caso-resultado">
+      <div class="cr-icon">✨</div>
+      <p>
+        <strong>"O implante ficou tão natural que esqueci que é postiço."</strong><br>
+        Esse é o padrão de resultado que buscamos em cada caso no Instituto Sorrisi.
+        Funcional, estético e definitivo.
+      </p>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════
+     PG 7 — DEPOIMENTOS
+     ══════════════════════════════════ -->
+<div class="page pg-dep">
+  <div class="pg-dep-header">
+    <span class="eyebrow">Prova Social</span>
+    <h2>O que nossos pacientes falam</h2>
+    <p>Depoimentos reais de quem transformou o sorriso e a vida no Instituto Sorrisi</p>
+  </div>
+
+  <div class="dep-list">
+    <div class="dep-card">
+      <div class="dep-aspas">"</div>
+      <p class="dep-texto">
+        Fui ao Instituto Sorrisi com muito medo — nunca fiz implante antes e achava que seria horrível.
+        O Dr. Ringo me explicou tudo com tanta paciência e clareza que me senti segura desde o primeiro momento.
+        A cirurgia foi rápida, o pós-operatório foi tranquilo, e o resultado superou tudo o que eu esperava.
+        Mal acredito que esse dente é "postiço"!
+      </p>
+      <div class="dep-rodape">
+        <div class="dep-avatar">M</div>
+        <div class="dep-info">
+          <div class="dep-nome">M.L.S.</div>
+          <div class="dep-trat">Implante unitário · Rio das Ostras</div>
+        </div>
+        <div class="dep-stars">★★★★★</div>
+      </div>
+    </div>
+
+    <div class="dep-card">
+      <div class="dep-aspas">"</div>
+      <p class="dep-texto">
+        Usava dentadura há anos e vivia com vergonha de sorrir. Decidi fazer o Protocolo e foi a melhor decisão da minha vida.
+        A Dra. Vanessa e o Dr. Ringo cuidaram de mim como se eu fosse da família deles. Hoje não vivo mais escondendo o sorriso —
+        vivo mostrando. Sou uma pessoa diferente.
+      </p>
+      <div class="dep-rodape">
+        <div class="dep-avatar">J</div>
+        <div class="dep-info">
+          <div class="dep-nome">J.R.F.</div>
+          <div class="dep-trat">Prótese Protocolo · Rio das Ostras</div>
+        </div>
+        <div class="dep-stars">★★★★★</div>
+      </div>
+    </div>
+
+    <div class="dep-card">
+      <div class="dep-aspas">"</div>
+      <p class="dep-texto">
+        O atendimento desde a recepção até o consultório é nota 10. Eles explicaram o meu caso, mostraram o planejamento
+        na tomografia e eu entendi exatamente o que ia acontecer em cada etapa. Senti que fui tratada com muito respeito
+        e profissionalismo. Recomendo de olhos fechados para qualquer pessoa.
+      </p>
+      <div class="dep-rodape">
+        <div class="dep-avatar">C</div>
+        <div class="dep-info">
+          <div class="dep-nome">C.A.M.</div>
+          <div class="dep-trat">Implante dentário · Rio das Ostras</div>
+        </div>
+        <div class="dep-stars">★★★★★</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════
+     PG 8 — INVESTIMENTO (PREÇOS REAIS)
+     ══════════════════════════════════ -->
+<div class="page pg-invest">
+  <div class="pg-invest-header">
+    <span class="eyebrow">Transparência Total</span>
+    <h2>Quanto custa o seu novo sorriso?</h2>
+    <p>
+      Acreditamos que você merece saber exatamente o que está investindo.
+      Abaixo, nossa tabela de procedimentos atualizada. Para um orçamento personalizado
+      ao seu caso, nossa equipe está pronta para atendê-lo.
+    </p>
+  </div>
+
+  <div class="invest-body">
+    <div class="invest-nota">
+      <strong>Cada caso é único.</strong> Os valores abaixo são por procedimento.
+      O seu orçamento é calculado conforme o planejamento individualizado — e sempre discutido com você com total clareza antes de qualquer decisão.
+    </div>
+
+    <table class="tabela">
+      <thead>
+        <tr>
+          <th>Procedimento</th>
+          <th style="text-align:right;">Valor</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="grupo-header">
+          <td colspan="2">Implante Unitário</td>
+        </tr>
+        <tr>
+          <td>Fase Cirúrgica — Instalação do Implante</td>
+          <td class="preco">R$ 1.800,00</td>
+        </tr>
+        <tr>
+          <td>Fase Protética — Coroa sobre Implante</td>
+          <td class="preco">R$ 2.000,00</td>
+        </tr>
+        <tr>
+          <td>Coroa Provisória sobre Implante</td>
+          <td class="preco">R$ 750,00</td>
+        </tr>
+        <tr>
+          <td>Ajuste do Implante</td>
+          <td class="preco">R$ 200,00</td>
+        </tr>
+        <tr>
+          <td>Instalação de Cicatrizador</td>
+          <td class="preco">R$ 200,00</td>
+        </tr>
+        <tr>
+          <td>Mini Pilar (Parafuso) de Implante</td>
+          <td class="preco">R$ 250,00</td>
+        </tr>
+
+        <tr class="grupo-header">
+          <td colspan="2">Enxertos e Procedimentos Complementares</td>
+        </tr>
+        <tr>
+          <td>Enxerto Ósseo para Implante</td>
+          <td class="preco">R$ 3.000,00</td>
+        </tr>
+        <tr>
+          <td>Levantamento de Seio Maxilar</td>
+          <td class="preco">R$ 3.000,00</td>
+        </tr>
+        <tr>
+          <td>Levantamento de Seio Atraumático</td>
+          <td class="preco">R$ 2.000,00</td>
+        </tr>
+
+        <tr class="grupo-header">
+          <td colspan="2">Protocolo — Reabilitação Total</td>
+        </tr>
+        <tr>
+          <td>Protocolo Superior — Fase Cirúrgica</td>
+          <td class="preco">R$ 9.000,00</td>
+        </tr>
+        <tr>
+          <td>Protocolo Superior — Fase Protética</td>
+          <td class="preco">R$ 9.000,00</td>
+        </tr>
+        <tr>
+          <td>Protocolo Inferior — Fase Cirúrgica</td>
+          <td class="preco">R$ 9.000,00</td>
+        </tr>
+        <tr>
+          <td>Protocolo Inferior — Fase Protética</td>
+          <td class="preco">R$ 9.000,00</td>
+        </tr>
+        <tr>
+          <td>Profilaxia de Protocolo (Superior ou Inferior)</td>
+          <td class="preco">R$ 500,00</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="pagamento-row">
+      <div class="pag-card">
+        <span class="pag-icon">💳</span>
+        <h4>Cartão</h4>
+        <p>Até 10x sem juros</p>
+      </div>
+      <div class="pag-card">
+        <span class="pag-icon">📱</span>
+        <h4>PIX</h4>
+        <p>Desconto especial</p>
+      </div>
+      <div class="pag-card">
+        <span class="pag-icon">📅</span>
+        <h4>Parcelado</h4>
+        <p>Até 21 parcelas</p>
+      </div>
+      <div class="pag-card">
+        <span class="pag-icon">💬</span>
+        <h4>Consulte</h4>
+        <p>Condições na recepção</p>
+      </div>
+    </div>
+
+    <div class="invest-garantia">
+      <strong>Saúde é o melhor investimento que existe.</strong><br>
+      E no Instituto Sorrisi, você investe com transparência, parcelamento acessível e o respaldo de uma equipe que realmente se importa com o seu resultado.
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════
+     PG 9 — CONTRACAPA / CTA
+     ══════════════════════════════════ -->
+<div class="page pg-cta">
+  <div class="pg-cta-foto">
+    <img src="fotos/clinica-01.jpg" alt="Instituto Sorrisi">
+    <div class="pg-cta-foto-overlay"></div>
+    <div class="pg-cta-foto-content">
+      <h2>O seu próximo passo<br><em>começa aqui.</em></h2>
+      <p>
+        Você já tem a informação. Já conhece a equipe, o tratamento, os casos reais.
+        Agora é simples: uma conversa com a gente — sem pressão, sem compromisso —
+        e você descobre exatamente o que o seu caso precisa.
+      </p>
+    </div>
+  </div>
+
+  <div class="pg-cta-bottom">
+    <div class="pg-cta-logo">
+      <img src="logo-white.png" alt="Instituto Sorrisi">
+    </div>
+
+    <div class="contatos-grid">
+      <div class="contato-item">
+        <div class="ci-circle">💬</div>
+        <div>
+          <div class="ci-label">WhatsApp</div>
+          <div class="ci-valor">(22) 99849-6156</div>
+        </div>
+      </div>
+      <div class="contato-item">
+        <div class="ci-circle">📸</div>
+        <div>
+          <div class="ci-label">Instagram</div>
+          <div class="ci-valor">@institutosorrisi</div>
+        </div>
+      </div>
+      <div class="contato-item">
+        <div class="ci-circle">📍</div>
+        <div>
+          <div class="ci-label">Endereço</div>
+          <div class="ci-valor">Est. Prof. Leandro Faria Sarzedas, 369</div>
+        </div>
+      </div>
+      <div class="contato-item">
+        <div class="ci-circle">🏢</div>
+        <div>
+          <div class="ci-label">Sala</div>
+          <div class="ci-valor">Sala 06, 2º Piso · Rio das Ostras/RJ</div>
+        </div>
+      </div>
+    </div>
+
+    <hr class="cta-hr">
+
+    <div class="cta-footer">
+      <div class="cta-footer-text">
+        <div class="slogan">Transformando sorrisos e vidas em Rio das Ostras / RJ.</div>
+        <div class="instituto">Instituto Sorrisi Odontologia e Saúde</div>
+      </div>
+      <div class="qr-box">
+        <div class="qr-ic">📷</div>
+        <p>QR Code<br>Instagram</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

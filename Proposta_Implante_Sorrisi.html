@@ -1,0 +1,625 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>Proposta Implante Dentário — Instituto Sorrisi</title>
+<style>
+  @page {
+    size: A4 landscape;
+    margin: 0;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: #fff;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  /* ─── PÁGINA ─── */
+  .page {
+    width: 297mm;
+    height: 210mm;
+    display: flex;
+    overflow: hidden;
+    page-break-after: always;
+    position: relative;
+    background: #fff;
+  }
+  .page:last-child { page-break-after: avoid; }
+
+  /* ─── COLUNAS ─── */
+  .col-left {
+    width: 44%;
+    height: 100%;
+    padding: 12mm 10mm 10mm 12mm;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    background: #fff;
+    z-index: 2;
+  }
+  .col-right {
+    width: 56%;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+  }
+  .col-right img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+  .col-right .overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.18);
+    z-index: 1;
+  }
+  .col-right .over-content {
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    padding-bottom: 14mm;
+  }
+
+  /* ─── CORES ─── */
+  :root {
+    --azul: #0B6FA4;
+    --roxo: #5B2D8E;
+    --rosa: #C8497C;
+    --bege: #F5F0EB;
+    --cinza: #2C2C2C;
+  }
+
+  /* ─── TOPO ─── */
+  .topo-bar {
+    width: calc(100% + 22mm);
+    margin: -12mm -10mm 0 -12mm;
+    padding: 4mm 12mm;
+    display: flex;
+    align-items: center;
+    gap: 8mm;
+    min-height: 16mm;
+  }
+  .topo-bar img.logo {
+    height: 10mm;
+    object-fit: contain;
+    filter: brightness(0) invert(1);
+  }
+  .topo-bar .titulo-topo {
+    color: #fff;
+    font-size: 9pt;
+    opacity: 0.9;
+    font-weight: 400;
+    letter-spacing: 0.5px;
+  }
+
+  /* ─── RODAPÉ ─── */
+  .rodape {
+    margin-top: auto;
+    padding-top: 4mm;
+    border-top: 1px solid #E0E0E0;
+    font-size: 7pt;
+    color: #777;
+    line-height: 1.6;
+  }
+
+  /* ─── TIPOGRAFIA ─── */
+  .titulo-grande {
+    font-size: 20pt;
+    font-weight: 700;
+    color: var(--azul);
+    line-height: 1.1;
+    margin-bottom: 1mm;
+  }
+  .subtitulo {
+    font-size: 11pt;
+    font-weight: 700;
+    color: var(--cinza);
+    margin-bottom: 3mm;
+  }
+  .linha-dec {
+    width: 28mm;
+    height: 2px;
+    margin: 4mm 0;
+  }
+  .linha-dec.azul { background: var(--azul); }
+  .linha-dec.roxo { background: var(--roxo); }
+
+  p.corpo {
+    font-size: 9.5pt;
+    color: #444;
+    line-height: 1.55;
+    margin-bottom: 3mm;
+  }
+
+  .box-destaque {
+    border-radius: 4px;
+    padding: 4mm 5mm;
+    margin: 4mm 0;
+  }
+  .box-azul { background: var(--azul); color: #fff; }
+  .box-bege { background: var(--bege); color: var(--cinza); }
+  .box-roxo { background: var(--roxo); color: #fff; }
+
+  .box-destaque .nome { font-size: 10.5pt; font-weight: 700; }
+  .box-destaque .sub  { font-size: 8pt; opacity: 0.85; margin-top: 1mm; }
+
+  /* BULLETS */
+  .bullets { list-style: none; margin: 2mm 0; }
+  .bullets li {
+    font-size: 9pt;
+    color: #444;
+    padding: 1.5mm 0 1.5mm 5mm;
+    position: relative;
+    line-height: 1.4;
+  }
+  .bullets li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+  }
+  .bullets.azul li::before { background: var(--azul); }
+  .bullets.roxo li::before { background: var(--roxo); }
+  .bullets.rosa li::before { background: var(--rosa); }
+
+  /* SERVIÇOS 2 colunas */
+  .servicos-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2mm 4mm;
+    margin: 2mm 0;
+  }
+  .servico-item .stit {
+    font-size: 8.5pt;
+    font-weight: 700;
+    color: var(--azul);
+  }
+  .servico-item .sdesc {
+    font-size: 7.5pt;
+    color: #666;
+    margin-top: 0.5mm;
+  }
+
+  /* ETAPAS */
+  .etapa {
+    display: flex;
+    align-items: flex-start;
+    gap: 3mm;
+    margin-bottom: 5mm;
+    position: relative;
+  }
+  .etapa:not(:last-child)::after {
+    content: '';
+    position: absolute;
+    left: 4.5mm;
+    top: 9mm;
+    bottom: -5mm;
+    width: 1px;
+    background: #ddd;
+  }
+  .etapa .num {
+    min-width: 9mm;
+    height: 9mm;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 7.5pt;
+    font-weight: 700;
+    color: #fff;
+    flex-shrink: 0;
+    margin-top: 0.5mm;
+  }
+  .etapa .num.azul { background: var(--azul); }
+  .etapa .etxt .etit {
+    font-size: 9pt;
+    font-weight: 700;
+    color: var(--cinza);
+  }
+  .etapa .etxt .edesc {
+    font-size: 7.5pt;
+    color: #666;
+    margin-top: 0.5mm;
+    line-height: 1.35;
+  }
+
+  /* TABELA VALORES */
+  .tabela-valores {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 7.5pt;
+    margin: 3mm 0;
+  }
+  .tabela-valores thead tr {
+    background: var(--azul);
+    color: #fff;
+  }
+  .tabela-valores thead th {
+    padding: 2.5mm 3mm;
+    text-align: left;
+    font-size: 7.5pt;
+    font-weight: 700;
+    letter-spacing: 0.3px;
+  }
+  .tabela-valores thead th:last-child { text-align: right; }
+  .tabela-valores tbody tr:nth-child(even) { background: var(--bege); }
+  .tabela-valores tbody tr:nth-child(odd)  { background: #fff; }
+  .tabela-valores tbody td {
+    padding: 1.8mm 3mm;
+    color: #333;
+    border-bottom: 0.3px solid #E8E8E8;
+  }
+  .tabela-valores tbody td:last-child {
+    text-align: right;
+    font-weight: 700;
+    color: var(--azul);
+  }
+
+  /* TEXTO SOBRE FOTO */
+  .quote-foto {
+    text-align: center;
+    color: #fff;
+    text-shadow: 0 1px 4px rgba(0,0,0,0.5);
+    margin-bottom: 5mm;
+  }
+  .quote-foto .qtext {
+    font-size: 14pt;
+    font-weight: 700;
+    line-height: 1.2;
+  }
+  .quote-foto .qaut {
+    font-size: 8pt;
+    opacity: 0.8;
+    margin-top: 2mm;
+  }
+
+  .cta-box {
+    background: rgba(11, 111, 164, 0.88);
+    border-radius: 4px;
+    padding: 4mm 8mm;
+    text-align: center;
+    color: #fff;
+    width: 85%;
+  }
+  .cta-box .cta-tit {
+    font-size: 11pt;
+    font-weight: 700;
+  }
+  .cta-box .cta-sub {
+    font-size: 8.5pt;
+    margin-top: 1.5mm;
+    opacity: 0.9;
+  }
+  .cta-box .cta-fin {
+    font-size: 7.5pt;
+    opacity: 0.7;
+    margin-top: 1mm;
+  }
+
+  /* Separador coluna */
+  .separador-vertical {
+    width: 1px;
+    background: #E8E8E8;
+    height: 100%;
+    position: absolute;
+    left: 44%;
+    top: 0;
+    z-index: 10;
+  }
+
+  /* pg número */
+  .pg-num {
+    position: absolute;
+    bottom: 6mm;
+    left: 12mm;
+    font-size: 7pt;
+    color: #bbb;
+  }
+
+  /* ── PÁGINA 4 layout especial ── */
+  .pg4 .col-left {
+    padding-top: 0;
+  }
+  .topo-full {
+    width: 297mm;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 15mm;
+    background: var(--azul);
+    display: flex;
+    align-items: center;
+    padding: 0 12mm;
+    gap: 8mm;
+    z-index: 5;
+  }
+  .topo-full img.logo { height: 9mm; filter: brightness(0) invert(1); }
+  .topo-full .ttit { color: #fff; font-size: 10pt; font-weight: 700; margin-left: auto; }
+
+  .pg4 .col-left { padding-top: 18mm; }
+
+  @media screen {
+    body { background: #ccc; padding: 10mm; }
+    .page {
+      margin-bottom: 8mm;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+    }
+  }
+</style>
+</head>
+<body>
+
+<!-- ═══════════════════════════════════════════════════════════════
+     PÁGINA 1 — CAPA
+═══════════════════════════════════════════════════════════════ -->
+<div class="page">
+  <!-- Coluna esquerda -->
+  <div class="col-left">
+    <!-- Topo azul -->
+    <div class="topo-bar" style="background: #0B6FA4; margin-bottom: 8mm;">
+      <img class="logo" src="logo.png" alt="Instituto Sorrisi">
+      <span class="titulo-topo">Implante Dentário · 2026</span>
+    </div>
+
+    <div class="titulo-grande">Volte a sorrir<br>com confiança.</div>
+    <div class="linha-dec azul"></div>
+
+    <p class="corpo">
+      O implante dentário é a solução mais próxima de um dente natural — com função, estética e durabilidade que transformam sua qualidade de vida.
+    </p>
+    <p class="corpo">
+      No Instituto Sorrisi, cada caso é planejado individualmente por um especialista dedicado, com tomografia computadorizada e acompanhamento completo do início ao fim.
+    </p>
+
+    <div class="box-destaque box-azul" style="margin-top: 3mm;">
+      <div class="nome">Dr. Ringo Star Begnami</div>
+      <div class="sub">Especialista em Implantodontia &nbsp;·&nbsp; CRO-RJ 45101</div>
+    </div>
+
+    <ul class="bullets azul" style="margin-top: 4mm;">
+      <li>Avaliação e planejamento individualizados</li>
+      <li>Implante unitário e reabilitação total (Protocolo)</li>
+      <li>Tomografia computadorizada incluída no planejamento</li>
+      <li>Parcelas em até 10x ou PIX com desconto</li>
+    </ul>
+
+    <div class="rodape">
+      @institutosorrisi &nbsp;·&nbsp; (22) 99849-6156
+    </div>
+  </div>
+
+  <!-- Coluna direita -->
+  <div class="col-right">
+    <img src="Revista com nosso portifólio/Implante dentario/Ringo/WhatsApp Image 2026-06-12 at 11.36.16.jpeg" alt="Dr. Ringo atendendo">
+    <div class="overlay"></div>
+    <div class="over-content" style="justify-content: flex-start; padding-top: 4mm; align-items: flex-end; padding-right: 8mm;">
+    </div>
+  </div>
+
+  <div class="pg-num">1 / 4</div>
+</div>
+
+
+<!-- ═══════════════════════════════════════════════════════════════
+     PÁGINA 2 — ESPECIALISTA
+═══════════════════════════════════════════════════════════════ -->
+<div class="page">
+  <div class="col-left">
+    <div class="topo-bar" style="background: #5B2D8E; margin-bottom: 8mm;">
+      <img class="logo" src="logo.png" alt="Instituto Sorrisi">
+      <span class="titulo-topo">Conheça o especialista</span>
+    </div>
+
+    <div class="titulo-grande" style="color: #5B2D8E; font-size: 16pt;">Conheça o especialista</div>
+    <div class="linha-dec roxo"></div>
+
+    <div class="box-destaque box-roxo" style="margin: 3mm 0;">
+      <div class="nome">Dr. Ringo Star Begnami</div>
+      <div class="sub">Implantodontista &nbsp;·&nbsp; CRO-RJ 45101</div>
+    </div>
+
+    <ul class="bullets roxo">
+      <li>Especialista em Implantodontia</li>
+      <li>Atende no Instituto Sorrisi</li>
+      <li>Planejamento com tomografia computadorizada</li>
+      <li>Implante unitário e reabilitação total com Protocolo</li>
+      <li>Atendimento humanizado e personalizado</li>
+    </ul>
+
+    <div class="linha-dec roxo" style="margin-top: 5mm;"></div>
+    <div class="subtitulo" style="color: #5B2D8E; margin-top: 3mm;">O que tratamos</div>
+
+    <div class="servicos-grid" style="margin-top: 3mm;">
+      <div class="servico-item">
+        <div class="stit" style="color: #5B2D8E;">Implante Unitário</div>
+        <div class="sdesc">Substituição de 1 ou mais dentes perdidos</div>
+      </div>
+      <div class="servico-item">
+        <div class="stit" style="color: #5B2D8E;">Prótese Protocolo</div>
+        <div class="sdesc">Reabilitação total fixa (All-on-4/6)</div>
+      </div>
+      <div class="servico-item">
+        <div class="stit" style="color: #5B2D8E;">Enxerto Ósseo</div>
+        <div class="sdesc">Para casos com perda de estrutura óssea</div>
+      </div>
+      <div class="servico-item">
+        <div class="stit" style="color: #5B2D8E;">Lev. de Seio</div>
+        <div class="sdesc">Implantes na região posterior superior</div>
+      </div>
+    </div>
+
+    <div class="rodape">
+      @institutosorrisi &nbsp;·&nbsp; (22) 99849-6156
+    </div>
+  </div>
+
+  <div class="col-right">
+    <img src="Revista com nosso portifólio/Implante dentario/Ringo/WhatsApp Image 2026-06-14 at 14.28.57 (1).jpeg" alt="Dr. Ringo Begnami">
+    <div class="overlay" style="background: rgba(91,45,142,0.10);"></div>
+  </div>
+
+  <div class="pg-num">2 / 4</div>
+</div>
+
+
+<!-- ═══════════════════════════════════════════════════════════════
+     PÁGINA 3 — TRATAMENTO / CLÍNICA
+═══════════════════════════════════════════════════════════════ -->
+<div class="page">
+  <div class="col-left">
+    <div class="topo-bar" style="background: #0B6FA4; margin-bottom: 8mm;">
+      <img class="logo" src="logo.png" alt="Instituto Sorrisi">
+      <span class="titulo-topo">Como funciona o tratamento</span>
+    </div>
+
+    <div class="titulo-grande" style="font-size: 15pt;">Como funciona<br>o tratamento</div>
+    <div class="linha-dec azul"></div>
+
+    <div style="margin-top: 5mm;">
+      <div class="etapa">
+        <div class="num azul">01</div>
+        <div class="etxt">
+          <div class="etit">Avaliação</div>
+          <div class="edesc">Exame clínico e tomografia para planejamento preciso</div>
+        </div>
+      </div>
+      <div class="etapa">
+        <div class="num azul">02</div>
+        <div class="etxt">
+          <div class="etit">Planejamento</div>
+          <div class="edesc">Definição do melhor tratamento para o seu caso</div>
+        </div>
+      </div>
+      <div class="etapa">
+        <div class="num azul">03</div>
+        <div class="etxt">
+          <div class="etit">Cirurgia</div>
+          <div class="edesc">Instalação do implante com anestesia local e todo conforto</div>
+        </div>
+      </div>
+      <div class="etapa">
+        <div class="num azul">04</div>
+        <div class="etxt">
+          <div class="etit">Cicatrização</div>
+          <div class="edesc">Período de osseointegração: 2 a 6 meses</div>
+        </div>
+      </div>
+      <div class="etapa">
+        <div class="num azul">05</div>
+        <div class="etxt">
+          <div class="etit">Prótese definitiva</div>
+          <div class="edesc">Instalação da coroa ou prótese. Resultado natural e duradouro</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="box-destaque box-bege" style="margin-top: 3mm;">
+      <div style="font-size: 8.5pt; font-weight: 700; color: #0B6FA4; margin-bottom: 2mm;">Por que o Instituto Sorrisi?</div>
+      <ul class="bullets rosa" style="margin: 0;">
+        <li>Especialista dedicado à Implantodontia</li>
+        <li>Planejamento por tomografia computadorizada</li>
+        <li>Ambiente moderno e acolhedor</li>
+        <li>Parcelamento em até 10x ou PIX com desconto</li>
+      </ul>
+    </div>
+
+    <div class="rodape">
+      @institutosorrisi &nbsp;·&nbsp; (22) 99849-6156
+    </div>
+  </div>
+
+  <div class="col-right">
+    <img src="Revista com nosso portifólio/Implante dentario/Ringo/WhatsApp Image 2026-06-14 at 14.28.57.jpeg" alt="Instituto Sorrisi">
+    <div class="overlay" style="background: rgba(11,111,164,0.12);"></div>
+  </div>
+
+  <div class="pg-num">3 / 4</div>
+</div>
+
+
+<!-- ═══════════════════════════════════════════════════════════════
+     PÁGINA 4 — INVESTIMENTO
+═══════════════════════════════════════════════════════════════ -->
+<div class="page pg4">
+
+  <!-- Barra topo full -->
+  <div class="topo-full">
+    <img class="logo" src="logo.png" alt="Instituto Sorrisi">
+    <div class="ttit">Investimento no seu sorriso</div>
+  </div>
+
+  <!-- Coluna esquerda -->
+  <div class="col-left">
+    <div class="titulo-grande" style="font-size: 14pt; margin-bottom: 2mm;">Tabela de valores</div>
+    <div class="linha-dec azul" style="margin: 2mm 0 3mm;"></div>
+
+    <table class="tabela-valores">
+      <thead>
+        <tr>
+          <th>Procedimento</th>
+          <th style="text-align:right;">Valor</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>Implante — Fase Cirúrgica</td><td>R$ 1.800,00</td></tr>
+        <tr><td>Implante — Fase Protética</td><td>R$ 2.000,00</td></tr>
+        <tr><td>Coroa Provisória sobre Implante</td><td>R$ 750,00</td></tr>
+        <tr><td>Enxerto Ósseo para Implante</td><td>R$ 3.000,00</td></tr>
+        <tr><td>Levantamento de Seio</td><td>R$ 3.000,00</td></tr>
+        <tr><td>Levantamento de Seio Atraumático</td><td>R$ 2.000,00</td></tr>
+        <tr><td>Mini Pilar (parafuso) de Implante</td><td>R$ 250,00</td></tr>
+        <tr><td>Instalação de Cicatrizador</td><td>R$ 200,00</td></tr>
+        <tr><td>Ajuste do Implante</td><td>R$ 200,00</td></tr>
+        <tr><td>Protocolo Inferior — Fase Cirúrgica</td><td>R$ 9.000,00</td></tr>
+        <tr><td>Protocolo Inferior — Fase Protética</td><td>R$ 9.000,00</td></tr>
+        <tr><td>Protocolo Superior — Fase Cirúrgica</td><td>R$ 9.000,00</td></tr>
+        <tr><td>Protocolo Superior — Fase Protética</td><td>R$ 9.000,00</td></tr>
+      </tbody>
+    </table>
+
+    <p style="font-size: 6.5pt; color: #999; margin: 1mm 0 3mm;">* Valores vigentes em 2026. Sujeitos a alteração.</p>
+
+    <div class="box-destaque box-roxo" style="font-size: 8pt; padding: 3mm 5mm;">
+      <strong>Formas de pagamento</strong><br>
+      <span style="opacity:0.9;">Cartão de crédito em até 10x sem juros</span><br>
+      <span style="opacity:0.9;">PIX com desconto &nbsp;·&nbsp; Parcelamento estendido em até 21x</span>
+    </div>
+  </div>
+
+  <!-- Coluna direita -->
+  <div class="col-right">
+    <img src="Revista com nosso portifólio/Implante dentario/Ringo/WhatsApp Image 2026-06-12 at 11.30.28.jpeg" alt="Paciente feliz">
+    <div class="overlay" style="background: rgba(0,0,50,0.22);"></div>
+    <div class="over-content">
+      <div class="quote-foto">
+        <div class="qtext">"Recuperei meu sorriso<br>e minha autoestima."</div>
+        <div class="qaut">Paciente Instituto Sorrisi</div>
+      </div>
+      <div class="cta-box">
+        <div class="cta-tit">Agende sua avaliação</div>
+        <div class="cta-sub">(22) 99849-6156 &nbsp;·&nbsp; @institutosorrisi</div>
+        <div class="cta-fin">Seu novo sorriso começa com uma conversa.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="pg-num">4 / 4</div>
+</div>
+
+</body>
+</html>

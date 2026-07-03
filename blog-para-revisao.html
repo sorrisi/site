@@ -1,0 +1,888 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Blog Instituto Sorrisi — Revisão Editorial</title>
+<style>
+  /* ===== RESET E BASE ===== */
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: Georgia, 'Times New Roman', serif;
+    font-size: 11pt;
+    line-height: 1.7;
+    color: #1a1a2e;
+    background: #fff;
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 2rem;
+  }
+
+  /* ===== ÍNDICE (apenas tela) ===== */
+  #indice {
+    background: #f0f4f8;
+    border: 1px solid #c5d5e8;
+    border-radius: 8px;
+    padding: 1.5rem 2rem;
+    margin-bottom: 3rem;
+  }
+  #indice h1 {
+    font-size: 1.1rem;
+    color: #1a1a2e;
+    margin-bottom: 1rem;
+    font-family: Arial, sans-serif;
+  }
+  #indice ol { padding-left: 1.5rem; }
+  #indice li { margin-bottom: 0.4rem; font-family: Arial, sans-serif; font-size: 0.9rem; }
+  #indice a { color: #1a5276; text-decoration: none; }
+  #indice a:hover { text-decoration: underline; }
+  #indice .instrucoes {
+    margin-top: 1rem;
+    padding: 0.75rem 1rem;
+    background: #fff3cd;
+    border: 1px solid #ffc107;
+    border-radius: 6px;
+    font-size: 0.82rem;
+    font-family: Arial, sans-serif;
+    color: #856404;
+  }
+
+  /* ===== ARTIGO ===== */
+  .artigo {
+    page-break-before: always;
+    break-before: page;
+    padding-top: 2rem;
+  }
+  .artigo:first-of-type { page-break-before: avoid; }
+
+  .artigo-cabecalho {
+    border-bottom: 2px solid #1a1a2e;
+    padding-bottom: 1rem;
+    margin-bottom: 1.5rem;
+  }
+  .artigo-categoria {
+    font-family: Arial, sans-serif;
+    font-size: 0.65rem;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: #c0392b;
+    margin-bottom: 0.5rem;
+  }
+  .artigo-titulo {
+    font-family: Georgia, serif;
+    font-size: 1.7rem;
+    font-weight: 400;
+    line-height: 1.25;
+    color: #1a1a2e;
+    margin-bottom: 0.75rem;
+  }
+  .artigo-meta {
+    font-family: Arial, sans-serif;
+    font-size: 0.75rem;
+    color: #666;
+  }
+  .artigo-meta strong { color: #1a1a2e; }
+
+  /* Número do artigo */
+  .artigo-num {
+    float: right;
+    font-family: Arial, sans-serif;
+    font-size: 0.7rem;
+    color: #999;
+    font-weight: 400;
+  }
+
+  /* ===== CONTEÚDO ===== */
+  h2 {
+    font-family: Georgia, serif;
+    font-size: 1.25rem;
+    font-weight: 500;
+    color: #1a1a2e;
+    margin: 2rem 0 0.75rem;
+    padding-bottom: 0.25rem;
+    border-bottom: 1px solid #e0e0e0;
+  }
+  h3 {
+    font-family: Georgia, serif;
+    font-size: 1.05rem;
+    font-weight: 500;
+    color: #1a1a2e;
+    margin: 1.5rem 0 0.5rem;
+  }
+  p { margin-bottom: 0.9rem; }
+  ul, ol { margin: 0.75rem 0 1rem 1.75rem; }
+  li { margin-bottom: 0.35rem; }
+
+  /* Destaque / citação */
+  .destaque, .article-highlight {
+    background: #f8f4f0;
+    border-left: 3px solid #c0392b;
+    padding: 0.9rem 1.2rem;
+    margin: 1.5rem 0;
+    font-style: italic;
+    color: #2c3e50;
+  }
+  .destaque strong, .article-highlight strong {
+    font-style: normal;
+    font-size: 0.82rem;
+    color: #555;
+    display: block;
+    margin-top: 0.4rem;
+  }
+
+  /* Caixas de aviso */
+  .aviso, .warning-box {
+    background: #fff8e1;
+    border: 1px solid #ffe082;
+    border-radius: 6px;
+    padding: 0.9rem 1.2rem;
+    margin: 1.5rem 0;
+    font-size: 0.9rem;
+    color: #5d4037;
+  }
+
+  /* Grid de tipos — lineariza para impressão */
+  .tipos-grid, .compare-grid, .serie-links {
+    display: block;
+  }
+  .tipo-card, .compare-col {
+    background: #f8f8f8;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    padding: 0.8rem 1rem;
+    margin-bottom: 0.75rem;
+    page-break-inside: avoid;
+  }
+  .tipo-title, .compare-title {
+    font-weight: 700;
+    color: #1a1a2e;
+    font-size: 0.95rem;
+    margin-bottom: 0.3rem;
+  }
+
+  /* FAQ */
+  .article-faq { margin: 2rem 0; }
+  .faq-item {
+    border-bottom: 1px solid #eee;
+    padding: 0.9rem 0;
+    page-break-inside: avoid;
+  }
+  .faq-q {
+    font-weight: 700;
+    color: #1a1a2e;
+    margin-bottom: 0.4rem;
+    font-family: Arial, sans-serif;
+    font-size: 0.9rem;
+  }
+  .faq-a { color: #333; font-size: 0.9rem; }
+
+  /* Fontes científicas */
+  .sources, .referencias {
+    background: #f5f5f5;
+    border-radius: 6px;
+    padding: 1rem 1.25rem;
+    margin-top: 2rem;
+    font-size: 0.72rem;
+    color: #555;
+    line-height: 1.6;
+    page-break-inside: avoid;
+  }
+  .sources strong, .referencias strong { color: #1a1a2e; }
+
+  /* Série box */
+  .serie-box {
+    background: #eef2f7;
+    border: 1px solid #c5d5e8;
+    border-radius: 6px;
+    padding: 0.75rem 1rem;
+    margin-bottom: 1.5rem;
+    font-size: 0.82rem;
+    font-family: Arial, sans-serif;
+    color: #2c3e50;
+  }
+  .serie-box ul { margin: 0.4rem 0 0 1.25rem; font-size: 0.78rem; }
+
+  /* Ocultar elementos de navegação */
+  nav, .mobile-menu, footer, .cta-banner, .article-nav,
+  .article-cta, .hamburger, .skip-link, .breadcrumb,
+  .btn, #indice .print-hide { display: none !important; }
+
+  /* Separador entre artigos */
+  .separador {
+    text-align: center;
+    margin: 2rem 0;
+    color: #999;
+    font-family: Arial, sans-serif;
+    font-size: 0.75rem;
+    letter-spacing: 0.1em;
+  }
+
+  /* Área de correção (visível apenas na versão impressa) */
+  .area-notas {
+    margin-top: 1.5rem;
+    border: 1px dashed #ccc;
+    border-radius: 6px;
+    padding: 0.75rem 1rem;
+    min-height: 60px;
+    font-family: Arial, sans-serif;
+    font-size: 0.72rem;
+    color: #bbb;
+  }
+
+  /* ===== IMPRESSÃO ===== */
+  @media print {
+    body { margin: 0; padding: 0; font-size: 10.5pt; max-width: none; }
+    #indice { display: none !important; }
+    .artigo { padding-top: 0; }
+    h2 { page-break-after: avoid; }
+    h3 { page-break-after: avoid; }
+    .faq-item { page-break-inside: avoid; }
+    .tipo-card { page-break-inside: avoid; }
+    .destaque, .aviso { page-break-inside: avoid; }
+    .sources { page-break-inside: avoid; }
+    a { color: #1a1a2e !important; text-decoration: none !important; }
+    @page { margin: 2cm 2.5cm; size: A4; }
+    @page :first { margin-top: 2cm; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ÍNDICE (visível apenas na tela) -->
+<div id="indice">
+  <h1>📋 Blog Instituto Sorrisi — 13 Artigos para Revisão Editorial</h1>
+  <ol>
+    <li><a href="#art01">Guia de Ortodontia: Qual Tratamento é Ideal para Você?</a></li>
+    <li><a href="#art02">Braquetes Autoligados: o que são e para quem indicar?</a></li>
+    <li><a href="#art03">Aparelho Convencional: tudo sobre o braquete metálico</a></li>
+    <li><a href="#art04">OFM — Ortodontia Funcional dos Maxilares</a></li>
+    <li><a href="#art05">Invisalign: como funciona, resultados e limitações</a></li>
+    <li><a href="#art06">Invisalign ou Aparelho Fixo? Como escolher</a></li>
+    <li><a href="#art07">Facetas e Lentes de Contato Dental</a></li>
+    <li><a href="#art08">Higiene Bucal: quantas vezes escovar os dentes por dia?</a></li>
+    <li><a href="#art09">Clareamento Dental: o que é, como funciona e riscos</a></li>
+    <li><a href="#art10">Implante Dentário: guia completo</a></li>
+    <li><a href="#art11">Odontopediatria: cuidados com os dentes das crianças</a></li>
+    <li><a href="#art12">Reabilitação Oral: quando e para quem é indicada?</a></li>
+    <li><a href="#art13">Prótese Dentária: tipos, indicações e cuidados</a></li>
+  </ol>
+  <div class="instrucoes">
+    💡 <strong>Para gerar PDF:</strong> Abra este arquivo no Chrome → Ctrl+P (ou Cmd+P no Mac) → Destino: "Salvar como PDF" → Tamanho A4, margens padrão → Salvar.<br>
+    Ou use o script <code>gerar-pdfs-blog.py</code> para gerar um PDF por artigo automaticamente (requer <code>pip install weasyprint</code>).
+  </div>
+</div>
+
+<!-- ============================================================ -->
+<!-- ARTIGO 1 -->
+<!-- ============================================================ -->
+<div class="artigo" id="art01">
+<div class="artigo-cabecalho">
+  <div class="artigo-categoria">Ortodontia <span class="artigo-num">Artigo 1 / 13</span></div>
+  <h1 class="artigo-titulo">Guia de Ortodontia:<br>Qual Tratamento é Ideal para Você?</h1>
+  <div class="artigo-meta"><strong>Autora:</strong> Dra. Vanessa Scotta, Ortodontista · CRO-RJ 40090 · Instituto Sorrisi, Rio das Ostras/RJ</div>
+</div>
+
+<div class="serie-box">
+  <p>🦷 Série: Ortodontia com a Dra. Vanessa Scotta</p>
+  <ul>
+    <li>→ Artigo 1 de 5: Guia geral de ortodontia (este artigo)</li>
+    <li>→ Artigo 2: Braquetes Autoligados</li>
+    <li>→ Artigo 3: Aparelho Convencional</li>
+    <li>→ Artigo 4: OFM — Ortodontia Funcional dos Maxilares</li>
+    <li>→ Artigo 5: Invisalign</li>
+  </ul>
+</div>
+
+<p>Ortodontia é a especialidade odontológica que corrige a posição dos dentes e da mordida. Mas com tantas opções disponíveis — aparelho convencional, autoligado, Invisalign, alinhadores genéricos, OFM — como saber qual é o mais indicado para cada caso?</p>
+<p>Este guia foi escrito pela Dra. Vanessa Scotta, ortodontista do Instituto Sorrisi em Rio das Ostras, para responder essa pergunta com clareza e base científica.</p>
+
+<h2>Por que fazer ortodontia?</h2>
+<p>Além da estética do sorriso, a ortodontia tem impacto direto na saúde bucal e geral. Dentes mal posicionados dificultam a higiene, aumentam o risco de cáries e doenças gengivais. Mordidas alteradas podem causar dor na articulação temporomandibular (ATM), cefaleia, bruxismo e dificuldade de mastigação.</p>
+
+<h2>Tipos de tratamento ortodôntico</h2>
+
+<div class="tipo-card">
+  <div class="tipo-title">Aparelho convencional (metálico)</div>
+  <p>Braquetes de metal colados nos dentes, conectados por fio metálico e elásticos. O mais acessível financeiramente, indicado para casos simples e complexos, em qualquer idade. A estética é o ponto de atenção.</p>
+</div>
+
+<div class="tipo-card">
+  <div class="tipo-title">Braquetes autoligados</div>
+  <p>Braquetes com mecanismo de trava interno (sem elásticos). Menor atrito, menos consultas de ajuste, levemente mais discreto. Indicados para os mesmos casos do convencional, com vantagens de conforto.</p>
+</div>
+
+<div class="tipo-card">
+  <div class="tipo-title">Invisalign® (alinhadores transparentes)</div>
+  <p>Série de alinhadores removíveis, trocados a cada 1-2 semanas. Discreto, removível para comer e higiene. Indicado para casos leves a moderados, ideal para adultos. Exige disciplina de uso (20-22h/dia).</p>
+</div>
+
+<div class="tipo-card">
+  <div class="tipo-title">OFM — Ortodontia Funcional dos Maxilares</div>
+  <p>Aparelhos ortopédicos que atuam no crescimento ósseo. Indicado principalmente para crianças e adolescentes. Corrige a relação entre os maxilares, não apenas a posição dos dentes.</p>
+</div>
+
+<div class="tipo-card">
+  <div class="tipo-title">Aparelho lingual</div>
+  <p>Braquetes colados na face interna dos dentes, completamente invisível por fora. Alta complexidade técnica, custo elevado, requer adaptação. Para casos específicos com alta demanda estética.</p>
+</div>
+
+<h2>Como é feita a escolha do tratamento?</h2>
+<p>A escolha do aparelho depende de uma avaliação completa com radiografias (panorâmica e telerradiografia de perfil), modelos de estudo e análise cefalométrica. Os fatores que influenciam a indicação são:</p>
+<ul>
+  <li>Complexidade do caso: apinhamento, espaçamento, mordida aberta, cruzada, classe II ou III</li>
+  <li>Idade e fase de desenvolvimento ósseo</li>
+  <li>Higiene bucal do paciente</li>
+  <li>Expectativas estéticas</li>
+  <li>Disponibilidade para consultas e comprometimento com o tratamento</li>
+  <li>Orçamento disponível</li>
+</ul>
+<p>Não existe um aparelho universalmente melhor — existe o aparelho mais indicado para cada paciente, em cada momento da vida.</p>
+
+<h2>Qual a idade certa para começar?</h2>
+<p>Para tratamentos ortopédicos (OFM), o momento ideal é durante o crescimento ativo — entre 6 e 12 anos. Para ortodontia propriamente dita, pode-se iniciar após a erupção dos dentes permanentes, geralmente entre 11 e 13 anos. Adultos também são excelentes candidatos — não há limite de idade, mas o tratamento pode ser mais longo em casos de comprometimento periodontal.</p>
+
+<h2>Qual o tempo médio de tratamento?</h2>
+<ul>
+  <li>Casos simples: 12 a 18 meses</li>
+  <li>Casos moderados: 18 a 24 meses</li>
+  <li>Casos complexos: 24 a 36 meses ou mais</li>
+  <li>OFM em crescimento: pode ser mais curto (8-14 meses de aparelho ortopédico)</li>
+</ul>
+<p>Após o tratamento ativo, o uso de contenção (aparelho removível ou fio colado) é fundamental para manter o resultado. A contenção é para a vida — isso é frequentemente subestimado pelos pacientes.</p>
+
+<div class="destaque">
+  <p>"A ortodontia é um dos poucos tratamentos odontológicos em que o resultado depende tanto do profissional quanto do paciente. Usar o aparelho ou os alinhadores corretamente, manter a higiene e comparecer às consultas de ajuste fazem toda a diferença no resultado final."</p>
+  <strong>— Dra. Vanessa Scotta, Ortodontista · Instituto Sorrisi</strong>
+</div>
+
+<div class="article-faq">
+<h2>Perguntas frequentes</h2>
+<div class="faq-item">
+  <div class="faq-q">Aparelho dói?</div>
+  <div class="faq-a">Nas primeiras 3-5 dias após cada ativação (ajuste do fio), é normal sentir desconforto e sensibilidade nos dentes ao morder. Analgésico comum resolve. Não é dor intensa — é mais uma pressão. Com o tempo, a adaptação fica cada vez mais rápida.</div>
+</div>
+<div class="faq-item">
+  <div class="faq-q">Posso comer normalmente com aparelho?</div>
+  <div class="faq-a">Com aparelho fixo (convencional ou autoligado), deve-se evitar alimentos duros, pegajosos ou muito ácidos que possam quebrar braquetes ou soltar colas. Com Invisalign, retira-se para comer — sem restrições alimentares.</div>
+</div>
+<div class="faq-item">
+  <div class="faq-q">O plano de saúde cobre ortodontia?</div>
+  <div class="faq-a">A maioria dos planos odontológicos básicos não cobre ortodontia. Alguns planos premium incluem cobertura parcial. Vale verificar seu contrato. No Instituto Sorrisi, trabalhamos com parcelamento facilitado.</div>
+</div>
+</div>
+
+<div class="sources">
+  <strong>Fontes:</strong> Proffit WR, Fields HW, Sarver DM. "Contemporary Orthodontics." 6ª ed., Elsevier, 2018 · Papageorgiou SN et al. "Treatment effects of fixed orthodontic appliances." Am J Orthod Dentofacial Orthop, 2014 · CFO. Resolução 198/2019 sobre especialidades · Invisalign Clinical Studies — Align Technology, 2024
+</div>
+<div class="area-notas">Notas de revisão: _______________________________________________</div>
+</div>
+
+<!-- ============================================================ -->
+<!-- ARTIGO 2 -->
+<!-- ============================================================ -->
+<div class="artigo" id="art02">
+<div class="artigo-cabecalho">
+  <div class="artigo-categoria">Ortodontia <span class="artigo-num">Artigo 2 / 13</span></div>
+  <h1 class="artigo-titulo">Braquetes Autoligados:<br>O que são e para quem são indicados?</h1>
+  <div class="artigo-meta"><strong>Autora:</strong> Dra. Vanessa Scotta, Ortodontista · CRO-RJ 40090 · Instituto Sorrisi, Rio das Ostras/RJ</div>
+</div>
+<div class="serie-box">
+  <p>📚 Série Ortodontia · Dra. Vanessa Scotta — Artigo 2 de 5</p>
+</div>
+<p>Os braquetes autoligados são um tipo de aparelho ortodôntico fixo que utiliza um mecanismo interno de trava para segurar o fio metálico, eliminando a necessidade dos elásticos coloridos tradicionais.</p>
+<h2>Como funcionam?</h2>
+<p>No aparelho convencional, o fio é preso ao braquete por um elástico ou ligadura metálica. No autoligado, o próprio braquete tem uma tampa deslizante ou mola que aprisiona o fio. Isso reduz o atrito entre o fio e o braquete, o que pode resultar em movimentos dentários mais suaves e eficientes.</p>
+<h2>Tipos de braquetes autoligados</h2>
+<div class="tipo-card">
+  <div class="tipo-title">Autoligado passivo</div>
+  <p>A trava fecha-se sem pressão adicional sobre o fio. Menor atrito, especialmente nas fases iniciais. Exemplos: Damon Q, SmartClip. Preferidos na fase de nivelamento e alinhamento.</p>
+</div>
+<div class="tipo-card">
+  <div class="tipo-title">Autoligado ativo</div>
+  <p>A trava aplica pressão sobre o fio, controlando mais o movimento. Exemplos: In-Ovation R, SPEED. Mais controle em fases avançadas do tratamento.</p>
+</div>
+<h2>Vantagens e limitações</h2>
+<div class="tipo-card">
+  <div class="tipo-title">Vantagens</div>
+  <p>Menor atrito nos estágios iniciais · Consultas de ajuste possivelmente menos frequentes · Maior conforto na fase de alinhamento · Fácil higiene sem elásticos</p>
+</div>
+<div class="tipo-card">
+  <div class="tipo-title">Limitações</div>
+  <p>Custo mais elevado que o convencional · Estudos mostram resultados finais similares ao convencional · A diferença de tempo de tratamento é modesta na maioria dos casos</p>
+</div>
+<h2>Autoligado vs. Convencional: o que a ciência diz?</h2>
+<p>Revisões sistemáticas recentes mostram que o braquete autoligado oferece menor atrito nas fases iniciais e pode reduzir o tempo de consulta, mas a diferença no tempo total de tratamento e na qualidade final do resultado é pequena em comparação com o aparelho convencional bem conduzido. A maior diferença está no conforto do paciente no dia a dia.</p>
+<div class="destaque">
+  <p>"A escolha entre autoligado e convencional deve ser feita com base no caso clínico específico e nas preferências do paciente, não apenas pela tecnologia do braquete. Um aparelho convencional bem planejado e conduzido tem resultado excelente."</p>
+  <strong>— Dra. Vanessa Scotta, Ortodontista · Instituto Sorrisi</strong>
+</div>
+<div class="sources">
+  <strong>Fontes:</strong> Pandis N et al. "Self-ligating brackets and orthodontic treatment outcomes." Angle Orthod, 2010 · Chen SSH et al. "Systematic review of self-ligating brackets." Eur J Orthod, 2010 · Miles PG et al. "Self-ligating vs conventional twin brackets." Am J Orthod Dentofacial Orthop, 2006
+</div>
+<div class="area-notas">Notas de revisão: _______________________________________________</div>
+</div>
+
+<!-- ============================================================ -->
+<!-- ARTIGO 3 -->
+<!-- ============================================================ -->
+<div class="artigo" id="art03">
+<div class="artigo-cabecalho">
+  <div class="artigo-categoria">Ortodontia <span class="artigo-num">Artigo 3 / 13</span></div>
+  <h1 class="artigo-titulo">Aparelho Convencional:<br>Tudo sobre o Braquete Metálico</h1>
+  <div class="artigo-meta"><strong>Autora:</strong> Dra. Vanessa Scotta, Ortodontista · CRO-RJ 40090 · Instituto Sorrisi, Rio das Ostras/RJ</div>
+</div>
+<div class="serie-box">
+  <p>📚 Série Ortodontia · Dra. Vanessa Scotta — Artigo 3 de 5</p>
+</div>
+<p>O aparelho convencional — o famoso "aparelho metálico" — continua sendo o tratamento ortodôntico mais utilizado no mundo, e por razões sólidas: é versátil, acessível, eficaz para casos simples e complexos, e sua tecnologia evoluiu muito nas últimas décadas.</p>
+<h2>Como funciona o aparelho convencional?</h2>
+<p>Braquetes de metal (ou cerâmica, na versão estética) são colados em cada dente com adesivo especial. Um fio metálico passa pelos slots dos braquetes e é preso com ligaduras (elásticos ou fios de metal finos). O fio exerce força contínua e leve sobre os dentes, movendo-os gradualmente para a posição correta. A cada consulta (geralmente a cada 4-8 semanas), o ortodontista faz ajustes no fio e troca as ligaduras.</p>
+<h2>Braquete metálico vs. cerâmico</h2>
+<div class="tipo-card">
+  <div class="tipo-title">Braquete metálico</div>
+  <p>Metal inoxidável ou liga de titânio. Mais resistente, menor custo, maior atrito com o fio. Os elásticos coloridos são a sua "assinatura" visual. Preferido em casos mais complexos e em pacientes jovens.</p>
+</div>
+<div class="tipo-card">
+  <div class="tipo-title">Braquete cerâmico</div>
+  <p>Porcelana ou alumina na cor do dente. Mais discreto esteticamente, porém mais frágil, maior custo e pode pigmentar. Indicado para adultos com demanda estética maior. Não é invisível — visível de perto.</p>
+</div>
+<h2>Indicações e limitações</h2>
+<p>O aparelho convencional é indicado para praticamente todos os casos ortodônticos: apinhamentos, espaçamentos, mordida aberta, mordida cruzada, classes II e III esqueletais (em conjunto com ortopedia ou cirurgia ortognática). Não tem contraindicação de idade — da adolescência à terceira idade.</p>
+<p>A principal limitação é estética: é visível. Também exige atenção redobrada à higiene em torno dos braquetes, onde a placa tende a se acumular.</p>
+<div class="destaque">
+  <p>"O aparelho convencional evoluiu muito. Os fios de níquel-titânio atuais geram forças mais leves e contínuas do que os fios de antes — o tratamento é mais confortável do que a geração anterior experimentou."</p>
+  <strong>— Dra. Vanessa Scotta, Ortodontista · Instituto Sorrisi</strong>
+</div>
+<div class="sources">
+  <strong>Fontes:</strong> Proffit WR et al. "Contemporary Orthodontics." Elsevier, 2018 · Papageorgiou SN et al. "Comparative effectiveness of orthodontic aligners." Eur J Orthod, 2020 · CFO. Resolução 198/2019
+</div>
+<div class="area-notas">Notas de revisão: _______________________________________________</div>
+</div>
+
+<!-- ============================================================ -->
+<!-- ARTIGO 4 -->
+<!-- ============================================================ -->
+<div class="artigo" id="art04">
+<div class="artigo-cabecalho">
+  <div class="artigo-categoria">Ortodontia Funcional <span class="artigo-num">Artigo 4 / 13</span></div>
+  <h1 class="artigo-titulo">OFM — Ortodontia Funcional dos Maxilares:<br>Como funciona o tratamento ortopédico?</h1>
+  <div class="artigo-meta"><strong>Autora:</strong> Dra. Vanessa Scotta, Ortodontista · CRO-RJ 40090 · Instituto Sorrisi, Rio das Ostras/RJ</div>
+</div>
+<div class="serie-box">
+  <p>🦷 Série: Ortodontia com a Dra. Vanessa Scotta — Artigo 4 de 5</p>
+</div>
+<p>A Ortodontia Funcional dos Maxilares (OFM) é uma abordagem terapêutica que utiliza aparelhos ortopédicos para corrigir a relação entre os maxilares durante a fase de crescimento. É diferente da ortodontia convencional: não age apenas nos dentes, mas nos ossos do rosto.</p>
+<h2>O que é OFM e para que serve?</h2>
+<p>A OFM atua sobre o crescimento ósseo dos maxilares, corrigindo discrepâncias esqueléticas — como maxilar protruso (queixo para trás, aparência de "peixe"), mandíbula retraída, mordidas cruzadas posteriores e anteriores — enquanto os ossos ainda são maleáveis. O momento ideal é durante o surto de crescimento, tipicamente entre 8 e 12 anos.</p>
+<h2>Principais aparelhos ortopédicos utilizados</h2>
+<div class="tipo-card">
+  <div class="tipo-title">Expansor Rápido da Maxila (ERM)</div>
+  <p>Aparelho fixo que expande o palato, aumentando a largura da arcada superior. Indicado para mordidas cruzadas posteriores e déficit transversal da maxila. Ativado pelos pais em casa, diariamente.</p>
+</div>
+<div class="tipo-card">
+  <div class="tipo-title">Aparelho de Herbst</div>
+  <p>Aparelho fixo que mantém a mandíbula em posição avançada 24h/dia, estimulando seu crescimento. Indicado para Classe II esqueletal (maxilar proeminente/mandíbula retraída).</p>
+</div>
+<div class="tipo-card">
+  <div class="tipo-title">Bionator / Activator</div>
+  <p>Aparelhos removíveis que reposicionam a mandíbula e estimulam o crescimento equilibrado. Eficazes quando usados conforme prescrito — exigem disciplina do paciente.</p>
+</div>
+<div class="tipo-card">
+  <div class="tipo-title">Máscara facial (Tração anterior)</div>
+  <p>Indicada para Classe III esqueletal (mandíbula protrusa ou maxila retraída). Aparelho extrabucal usado à noite, que trações a maxila para a frente durante o crescimento.</p>
+</div>
+<h2>OFM é seguida de ortodontia?</h2>
+<p>Geralmente sim. A OFM corrige a base óssea e cria um ambiente favorável. Após o tratamento ortopédico, em muitos casos é necessária uma fase de ortodontia convencional (aparelho fixo) para posicionar os dentes individualmente dentro da nova arquitetura óssea. O resultado combinado é superior ao que seria possível com apenas um dos tratamentos isoladamente.</p>
+<div class="destaque">
+  <p>"Intervir no momento certo do crescimento pode evitar extrações dentárias e, em alguns casos, até cirurgias ortognáticas no futuro. O diagnóstico precoce é fundamental."</p>
+  <strong>— Dra. Vanessa Scotta, Ortodontista · Instituto Sorrisi</strong>
+</div>
+<div class="sources">
+  <strong>Fontes:</strong> McNamara JA, Brudon WL. "Orthodontics and Dentofacial Orthopedics." Needham Press, 2001 · Bishara SE. "Textbook of Orthodontics." Saunders, 2001 · Proffit WR et al. "Contemporary Orthodontics." Elsevier, 2018
+</div>
+<div class="area-notas">Notas de revisão: _______________________________________________</div>
+</div>
+
+<!-- ============================================================ -->
+<!-- ARTIGO 5 -->
+<!-- ============================================================ -->
+<div class="artigo" id="art05">
+<div class="artigo-cabecalho">
+  <div class="artigo-categoria">Ortodontia · Invisalign <span class="artigo-num">Artigo 5 / 13</span></div>
+  <h1 class="artigo-titulo">Invisalign:<br>Como funciona, resultados e limitações</h1>
+  <div class="artigo-meta"><strong>Autora:</strong> Dra. Vanessa Scotta, Ortodontista · CRO-RJ 40090 · Instituto Sorrisi, Rio das Ostras/RJ · Invisalign Doctor credenciada</div>
+</div>
+<div class="serie-box">
+  <p>🦷 Série: Ortodontia com a Dra. Vanessa Scotta — Artigo 5 de 5</p>
+</div>
+<p>O Invisalign é o sistema de alinhadores ortodônticos transparentes mais utilizado no mundo, com mais de 15 milhões de pacientes tratados. Mas como funciona exatamente? Para quais casos é indicado? E quais são suas limitações reais?</p>
+<h2>Como o Invisalign funciona?</h2>
+<p>O tratamento consiste em uma série de alinhadores plásticos (feitos em poliuretano termoplástico), cada um ligeiramente diferente do anterior. O paciente troca de alinhador a cada 1-2 semanas, e cada troca move os dentes pequenas frações de milímetro em direção à posição final planejada.</p>
+<p>O planejamento digital é feito pelo software ClinCheck, onde você vê a simulação do resultado final antes de começar. Os alinhadores são fabricados por impressão 3D com base nesse planejamento.</p>
+<h2>Para quais casos o Invisalign é indicado?</h2>
+<ul>
+  <li>Apinhamentos leves a moderados</li>
+  <li>Espaçamentos entre os dentes</li>
+  <li>Mordida aberta anterior leve a moderada</li>
+  <li>Mordida cruzada leve</li>
+  <li>Classe II leve (com auxiliares como elásticos)</li>
+  <li>Recidivas após tratamento ortodôntico prévio</li>
+</ul>
+<h2>Limitações do Invisalign</h2>
+<p>O Invisalign tem limitações reais que precisam ser compreendidas:</p>
+<ul>
+  <li>Casos de extração com movimentação complexa ainda são melhor conduzidos com aparelho fixo</li>
+  <li>Correções esqueléticas graves requerem abordagem combinada</li>
+  <li>Exige disciplina rigorosa: mínimo 20-22h de uso diário — quem não consegue manter não terá o resultado esperado</li>
+  <li>Custo geralmente mais alto que aparelho convencional</li>
+</ul>
+<h2>Invisalign vs. aparelho fixo: qual é melhor?</h2>
+<p>Não existe um "melhor absoluto" — existe o mais indicado para cada caso. Para casos leves a moderados em adultos com disciplina de uso, o Invisalign oferece a vantagem da discrição e da facilidade de higiene. Para casos complexos, o aparelho fixo ainda oferece mais controle tridimensional dos movimentos dentários.</p>
+<div class="destaque">
+  <p>"O Invisalign transformou o acesso à ortodontia para adultos que jamais usariam aparelho metálico. Mas o resultado depende tanto da disciplina do paciente quanto da expertise do ortodontista no planejamento."</p>
+  <strong>— Dra. Vanessa Scotta, Ortodontista · Invisalign Doctor credenciada · Instituto Sorrisi</strong>
+</div>
+<div class="sources">
+  <strong>Fontes:</strong> Align Technology. Invisalign Clinical Studies. Align Technology, Inc., 2024 · Papageorgiou SN et al. "Comparative effectiveness of clear aligners and fixed appliances." Eur J Orthod, 2020 · Rossini G et al. "Efficacy of clear aligners in controlling orthodontic tooth movement." Angle Orthod, 2015
+</div>
+<div class="area-notas">Notas de revisão: _______________________________________________</div>
+</div>
+
+<!-- ============================================================ -->
+<!-- ARTIGO 6 -->
+<!-- ============================================================ -->
+<div class="artigo" id="art06">
+<div class="artigo-cabecalho">
+  <div class="artigo-categoria">Ortodontia <span class="artigo-num">Artigo 6 / 13</span></div>
+  <h1 class="artigo-titulo">Invisalign ou Aparelho Fixo?<br>Como fazer a escolha certa</h1>
+  <div class="artigo-meta"><strong>Autora:</strong> Dra. Vanessa Scotta, Ortodontista · CRO-RJ 40090 · Instituto Sorrisi, Rio das Ostras/RJ</div>
+</div>
+<p>Esta é uma das perguntas mais frequentes no consultório: "Doutor(a), qual é melhor, Invisalign ou aparelho fixo?" A resposta honesta é: depende do caso, do paciente e das expectativas.</p>
+<h2>Principais diferenças práticas</h2>
+<div class="tipo-card">
+  <div class="tipo-title">Estética</div>
+  <p>Invisalign vence com folga — quase invisível. O aparelho fixo (braquetes cerâmicos e autoligados) melhorou muito, mas ainda é visível de perto.</p>
+</div>
+<div class="tipo-card">
+  <div class="tipo-title">Higiene</div>
+  <p>Invisalign: remove os alinhadores para escovar e usar fio dental — higiene mais fácil. Aparelho fixo exige escovas interdentais e fio dental especial para contornar o fio ortodôntico.</p>
+</div>
+<div class="tipo-card">
+  <div class="tipo-title">Conforto</div>
+  <p>Ambos causam desconforto nas primeiras trocas/ajustes. O Invisalign tende a ser mais confortável a longo prazo (sem pontas de fio). O aparelho fixo pode machucar a mucosa nos primeiros meses.</p>
+</div>
+<div class="tipo-card">
+  <div class="tipo-title">Disciplina</div>
+  <p>Invisalign exige rigorosa disciplina de uso (20-22h/dia). Aparelho fixo é passivo — está sempre trabalhando, independentemente da cooperação do paciente.</p>
+</div>
+<div class="tipo-card">
+  <div class="tipo-title">Custo</div>
+  <p>Invisalign geralmente é mais caro (tecnologia proprietária de alinhadores e planejamento digital). Aparelho convencional é a opção mais acessível. Braquetes autoligados e cerâmicos ficam no meio-termo.</p>
+</div>
+<h2>Quem é candidato ideal para cada um?</h2>
+<p><strong>Invisalign é mais indicado para:</strong> adultos com casos leves a moderados, profissionais com alta demanda estética, pacientes com dificuldade de adaptação ao aparelho fixo, casos de recidiva após tratamento anterior.</p>
+<p><strong>Aparelho fixo é mais indicado para:</strong> casos mais complexos, extrações dentárias, crianças e adolescentes em fase de crescimento, pacientes que não conseguem manter a disciplina de uso dos alinhadores.</p>
+<div class="destaque">
+  <p>"Quando o paciente pergunta qual é o melhor, respondo: o melhor é o que resolve o problema dele, que ele vai usar corretamente e que cabe no orçamento. Às vezes é o Invisalign, às vezes é o convencional, e às vezes é a combinação dos dois."</p>
+  <strong>— Dra. Vanessa Scotta, Ortodontista · Instituto Sorrisi</strong>
+</div>
+<div class="area-notas">Notas de revisão: _______________________________________________</div>
+</div>
+
+<!-- ============================================================ -->
+<!-- ARTIGO 7 -->
+<!-- ============================================================ -->
+<div class="artigo" id="art07">
+<div class="artigo-cabecalho">
+  <div class="artigo-categoria">Estética <span class="artigo-num">Artigo 7 / 13</span></div>
+  <h1 class="artigo-titulo">Facetas e Lentes de Contato Dental:<br>Diferenças, Indicações e o que Esperar</h1>
+  <div class="artigo-meta"><strong>Autora:</strong> Dra. Juliana Sartori, CRO-RJ 33516 · Reabilitação Oral &amp; Prótese · Instituto Sorrisi, Rio das Ostras/RJ</div>
+</div>
+<p>Facetas e lentes de contato dental são os dois principais recursos da odontologia estética para transformar a aparência do sorriso. Mas muitas pessoas chegam ao consultório confundindo os dois ou sem entender quando cada um é indicado.</p>
+<h2>O que é uma faceta dental?</h2>
+<p>Faceta dental é uma lâmina fina de porcelana (cerâmica) colada na face frontal do dente. Ela tem espessura de 0,5 a 1,2 mm, cobre toda a superfície frontal do dente e pode modificar cor, forma, tamanho e alinhamento aparente. Para colar a faceta, é necessário um pequeno desgaste do esmalte dental (geralmente 0,5 a 0,7 mm) — processo irreversível.</p>
+<h2>O que é lente de contato dental?</h2>
+<p>A lente de contato dental é uma versão ultrafina da faceta, com espessura de 0,2 a 0,5 mm. Requer desgaste mínimo ou nenhum desgaste do esmalte (procedimento minimamente invasivo). É a opção mais conservadora para melhorar a estética, mas só é adequada quando o dente já tem boa posição e o principal problema é cor, forma ou pequenas irregularidades.</p>
+<h2>Faceta vs. Lente de Contato: quando usar cada uma?</h2>
+<div class="tipo-card">
+  <div class="tipo-title">Indicações da lente de contato</div>
+  <p>Dentes bem posicionados com problema principalmente de cor ou forma leve · Dentes sem restaurações volumosas · Esmalte íntegro e em quantidade suficiente · Pacientes com expectativas realistas (não muda drásticamente posição)</p>
+</div>
+<div class="tipo-card">
+  <div class="tipo-title">Indicações da faceta cerâmica</div>
+  <p>Casos com maior mudança de forma necessária · Dentes com mais rotação ou inclinação · Dentes com restaurações anteriores extensas · Quando é necessário mascarar manchas resistentes ao clareamento (fluorose severa, manchas de tetraciclina)</p>
+</div>
+<h2>Quanto duram?</h2>
+<p>Com cuidados adequados (evitar morder objetos duros, usar protetor em caso de bruxismo, higiene correta), tanto facetas quanto lentes de contato têm durabilidade de 10-20 anos documentada em estudos clínicos. Lentes de contato, por serem mais finas, são ligeiramente mais frágeis.</p>
+<h2>Planejamento estético digital</h2>
+<p>Antes da execução, é feito um planejamento estético digital (DSD — Digital Smile Design) e um mock-up (protótipo temporário colado nos dentes) para o paciente visualizar o resultado antes de qualquer desgaste. Nenhuma faceta ou lente deve ser feita sem essa etapa.</p>
+<div class="destaque">
+  <p>"A lente de contato dental não é 'melhor' que a faceta: é diferente. Ela é excelente quando o dente está bem posicionado e a alteração é principalmente de cor ou forma leve. Em casos mais complexos, a faceta oferece mais controle e resultado mais previsível."</p>
+  <strong>— Dra. Juliana Sartori, CRO-RJ 33516</strong>
+</div>
+<div class="sources">
+  <strong>Fontes:</strong> Magne P, Belser U. "Bonded Porcelain Restorations in the Anterior Dentition." Quintessence, 2002 · Gurel G. "The Science and Art of Porcelain Laminate Veneers." Quintessence, 2003 · CFO. Resolução CFO-198/2019
+</div>
+<div class="area-notas">Notas de revisão: _______________________________________________</div>
+</div>
+
+<!-- ============================================================ -->
+<!-- ARTIGO 8 -->
+<!-- ============================================================ -->
+<div class="artigo" id="art08">
+<div class="artigo-cabecalho">
+  <div class="artigo-categoria">Prevenção <span class="artigo-num">Artigo 8 / 13</span></div>
+  <h1 class="artigo-titulo">Higiene Bucal:<br>Quantas vezes escovar os dentes por dia?</h1>
+  <div class="artigo-meta"><strong>Autor:</strong> Dr. Saulo Luiz, Clínico Geral · Instituto Sorrisi, Rio das Ostras/RJ</div>
+</div>
+<p>Muita gente em Rio das Ostras ainda tem dúvidas sobre a rotina ideal de higiene bucal, e não é por descuido: há muita informação contraditória. Este artigo responde com base no que a ciência recomenda.</p>
+<h2>A resposta: 3 vezes ao dia, com a técnica certa</h2>
+<p>A grande maioria dos estudos científicos e as principais entidades de saúde bucal do mundo, incluindo a Federação Dentária Internacional (FDI) e o CFO, recomendam a escovação <strong>3 vezes ao dia</strong>, com duração mínima de 2 minutos.</p>
+<p>Por quê? O ciclo de formação da placa bacteriana (biofilme) leva aproximadamente 12-24 horas para atingir um nível que pode causar danos. Três escovações diárias — após o café da manhã, almoço e jantar — interrompem esse ciclo de forma eficaz.</p>
+<div class="destaque">
+  <p>"O momento da escovação importa tanto quanto a frequência. Escovar antes de dormir é o mais crítico: durante o sono, o fluxo salivar diminui muito, e a saliva é nossa proteção natural contra as bactérias. Sem a escovação noturna, as bactérias trabalham a noite toda sem concorrência."</p>
+  <strong>— Dr. Saulo Luiz, Clínico Geral · Instituto Sorrisi</strong>
+</div>
+<h2>Por que NÃO escovar logo após comer?</h2>
+<p>Escovar os dentes logo após consumir alimentos ácidos (sucos cítricos, refrigerantes, vinagre) pode danificar o esmalte. Quando o pH da boca cai, o esmalte fica temporariamente amolecido e a escovação imediata pode danificá-lo. Recomendação: aguardar ao menos 15 minutos após refeições ou consumo de ácidos antes de escovar.</p>
+<h2>A técnica é mais importante que a frequência</h2>
+<p>A escovação eficaz requer:</p>
+<ul>
+  <li><strong>Inclinação correta:</strong> 45° em direção à gengiva</li>
+  <li><strong>Movimentos curtos:</strong> pequenos movimentos circulares em cada grupo de dentes</li>
+  <li><strong>Sem pressão excessiva:</strong> escovar forte não limpa melhor, machuca a gengiva</li>
+  <li><strong>Cobrir todas as superfícies:</strong> externa, interna, mastigatória e a língua</li>
+  <li><strong>2 minutos completos:</strong> a maioria das pessoas escova por 45 segundos</li>
+</ul>
+<h2>Fio dental: obrigatório</h2>
+<p>O espaço entre os dentes representa ~40% da superfície total, e a escova não alcança. Cáries entre os dentes e doença gengival começam justamente onde a escova não chega. Use fio dental ou escovas interdentais antes de escovar, especialmente à noite.</p>
+<h2>Rotina de higiene ideal</h2>
+<ul>
+  <li>Ao acordar: escovar dentes + língua por 2 min (pasta fluoretada 1000-1500 ppm)</li>
+  <li>Após o café da manhã: aguardar 15 min, depois escovar</li>
+  <li>À noite, antes de dormir: fio dental → escovar dentes + língua → enxaguante (opcional)</li>
+  <li>Troca da escova a cada 3 meses</li>
+  <li>Consulta odontológica a cada 6 meses para profilaxia profissional</li>
+</ul>
+<div class="sources">
+  <strong>Fontes:</strong> Slot DE et al. "The effect of frequency of brushing on plaque." Clin Oral Investig, 2012 · Chapple ILC et al. "Primary prevention of periodontitis." J Clin Periodontol, 2015 · FDI World Dental Federation. "Oral Health Worldwide" 2024 · CFO. Diretrizes de Saúde Bucal 2023
+</div>
+<div class="area-notas">Notas de revisão: _______________________________________________</div>
+</div>
+
+<!-- ============================================================ -->
+<!-- ARTIGO 9 -->
+<!-- ============================================================ -->
+<div class="artigo" id="art09">
+<div class="artigo-cabecalho">
+  <div class="artigo-categoria">Estética <span class="artigo-num">Artigo 9 / 13</span></div>
+  <h1 class="artigo-titulo">Clareamento Dental:<br>O que é, como funciona e quais são os riscos?</h1>
+  <div class="artigo-meta"><strong>Autora:</strong> Dra. Ana Livia, Clínica Geral · Instituto Sorrisi, Rio das Ostras/RJ</div>
+</div>
+<p>O clareamento dental é um dos procedimentos mais buscados em Rio das Ostras. Mas entre tanto marketing e produtos vendidos em farmácias, o que de fato funciona? E o que faz mal? Este artigo responde com base em evidências científicas.</p>
+<h2>Como o clareamento dental funciona?</h2>
+<p>O agente clareador — geralmente peróxido de hidrogênio ou peróxido de carbamida — penetra pelo esmalte do dente e reage com as moléculas de pigmento acumuladas. Essa reação de oxi-redução quebra as moléculas de cor, tornando o dente mais claro. O esmalte em si não muda de estrutura — o que muda são os pigmentos orgânicos internos.</p>
+<h2>Tipos de clareamento dental</h2>
+<div class="tipo-card">
+  <div class="tipo-title">Clareamento a laser (consultório)</div>
+  <p>Realizado pelo dentista em sessão única ou poucas sessões. Gel de alta concentração ativado por luz LED ou laser. Resultado rápido, ideal para quem quer resultado em poucos dias.</p>
+</div>
+<div class="tipo-card">
+  <div class="tipo-title">Clareamento caseiro supervisionado</div>
+  <p>Moldeiras personalizadas feitas pelo dentista, usadas em casa com gel de menor concentração por 2-4 semanas. Resultado gradual, mas geralmente mais estável e duradouro.</p>
+</div>
+<div class="tipo-card">
+  <div class="tipo-title">Clareamento combinado</div>
+  <p>Combina sessão de consultório (resultado imediato) com moldeiras caseiras (manutenção). É o protocolo com melhor custo-benefício e resultados mais estáveis.</p>
+</div>
+<div class="tipo-card">
+  <div class="tipo-title">Produtos de farmácia</div>
+  <p>Fitas, géis, pastas abrasivas. Concentrações muito baixas de agente ativo: resultados limitados. Não substituem o tratamento profissional supervisionado.</p>
+</div>
+<h2>O clareamento faz mal ao esmalte?</h2>
+<p>Quando realizado corretamente, com indicação adequada e concentrações apropriadas, o clareamento é seguro. Os riscos existem mas são controláveis:</p>
+<ul>
+  <li><strong>Sensibilidade dental:</strong> o efeito mais comum e temporário, cede em dias</li>
+  <li><strong>Irritação gengival:</strong> prevenida com protetores no consultório</li>
+  <li><strong>Regressão de cor:</strong> resultado não é permanente — hábitos como café, vinho, cigarro aceleram o retorno</li>
+</ul>
+<div class="aviso">
+  <p><strong>⚠️ Atenção:</strong> Clareamentos feitos sem supervisão profissional (salões de beleza, espaços estéticos, produtos não regulamentados pela ANVISA) podem usar concentrações irregulares e causar danos ao esmalte. No Brasil, apenas cirurgiões-dentistas estão legalmente habilitados a realizar clareamentos.</p>
+</div>
+<div class="destaque">
+  <p>"O clareamento mais eficaz não é necessariamente o mais rápido: é o que é bem indicado para aquele paciente específico."</p>
+  <strong>— Dra. Ana Livia, Dentista Esteta · Instituto Sorrisi</strong>
+</div>
+<div class="sources">
+  <strong>Fontes:</strong> Kwon SR &amp; Wertz PW. "Review of the mechanism of tooth whitening." J Esthet Restor Dent, 2015 · Carey CM. "Tooth whitening: what we now know." J Evid Based Dent Pract, 2014 · ANVISA. Resolução RDC 35/2014 · CFO. Resolução CFO-198/2019
+</div>
+<div class="area-notas">Notas de revisão: _______________________________________________</div>
+</div>
+
+<!-- ============================================================ -->
+<!-- ARTIGO 10 -->
+<!-- ============================================================ -->
+<div class="artigo" id="art10">
+<div class="artigo-cabecalho">
+  <div class="artigo-categoria">Implantodontia <span class="artigo-num">Artigo 10 / 13</span></div>
+  <h1 class="artigo-titulo">Implante Dentário:<br>Guia Completo para Quem Perdeu um Dente</h1>
+  <div class="artigo-meta"><strong>Autor:</strong> Dr. Ringo Luiz, Implantodontia · Instituto Sorrisi, Rio das Ostras/RJ</div>
+</div>
+<p>Se você mora em Rio das Ostras e está pensando em repor um dente perdido, este guia foi escrito pelo Dr. Ringo, responsável pelos implantes no Instituto Sorrisi, para responder as dúvidas mais frequentes com base em evidências científicas.</p>
+<h2>O que é um implante dentário?</h2>
+<p>O implante dentário é um parafuso de titânio biocompatível inserido cirurgicamente no osso da mandíbula ou maxila, substituindo a raiz do dente perdido. Sobre esse parafuso é colocado um intermediário (pilar) e, em seguida, uma coroa de porcelana ou zircônia que imita a aparência e função do dente natural.</p>
+<div class="destaque">
+  <p>"O implante não é apenas estético: ele preserva o osso. Quando um dente é perdido e não é reposto, o osso da região começa a reabsorver em questão de meses. O implante estimula o osso como o dente natural fazia, prevenindo essa perda."</p>
+  <strong>— Dr. Ringo Luiz, Implantodontia · Instituto Sorrisi</strong>
+</div>
+<h2>Quem pode fazer implante dentário?</h2>
+<p>A grande maioria das pessoas adultas com osso suficiente na região do dente perdido é candidata ao implante. São candidatos:</p>
+<ul>
+  <li>Adultos que perderam dentes por cárie, trauma ou doença periodontal</li>
+  <li>Usuários de prótese removível que desejam mais conforto e estabilidade</li>
+  <li>Pacientes com dentes comprometidos que precisarão de extração futura</li>
+  <li>Pessoas que querem uma solução definitiva e de longa duração</li>
+</ul>
+<h2>Como é o procedimento cirúrgico?</h2>
+<p>Cirurgia realizada com anestesia local, em consultório, sem internação. As etapas gerais são:</p>
+<ol>
+  <li><strong>Planejamento:</strong> tomografia computadorizada (cone-beam) para avaliar osso e planejar digitalmente</li>
+  <li><strong>Cirurgia:</strong> incisão na gengiva, perfuração do osso, inserção do implante de titânio</li>
+  <li><strong>Osseointegração:</strong> 2 a 6 meses para o implante se integrar ao osso</li>
+  <li><strong>Prótese definitiva:</strong> moldagem e instalação da coroa de porcelana ou zircônia</li>
+</ol>
+<h2>Quanto tempo dura um implante?</h2>
+<p>Estudos de longo prazo mostram taxas de sucesso acima de 95% após 10 anos com indicação correta, boa execução e manutenção. Com cuidados adequados, muitos implantes duram décadas.</p>
+<div class="sources">
+  <strong>Fontes:</strong> Albrektsson T et al. "Long-term follow-up of osseointegrated implants." Int J Oral Maxillofac Implants, 2012 · Moraschini V et al. "Evaluation of survival and success rates of dental implants." Int J Oral Maxillofac Surg, 2015 · CFO. Resolução 63/2005
+</div>
+<div class="area-notas">Notas de revisão: _______________________________________________</div>
+</div>
+
+<!-- ============================================================ -->
+<!-- ARTIGO 11 -->
+<!-- ============================================================ -->
+<div class="artigo" id="art11">
+<div class="artigo-cabecalho">
+  <div class="artigo-categoria">Odontopediatria <span class="artigo-num">Artigo 11 / 13</span></div>
+  <h1 class="artigo-titulo">Odontopediatria:<br>Cuidados com os Dentes das Crianças desde o Nascimento</h1>
+  <div class="artigo-meta"><strong>Autora:</strong> Dra. Sindy Alves, Odontopediatra · Instituto Sorrisi, Rio das Ostras/RJ</div>
+</div>
+<p>A saúde bucal infantil começa muito antes dos primeiros dentes aparecerem. Pais bem informados fazem toda a diferença na prevenção de cáries e no desenvolvimento saudável da arcada dentária dos seus filhos.</p>
+<h2>Quando começa a higiene bucal?</h2>
+<p>Antes dos dentes: limpar as gengivas do bebê com gaze úmida ou dedeira após cada mamada. Quando o primeiro dente erupcionar (geralmente entre 6 e 12 meses), iniciar a escovação com escova infantil de cerdas macias e quantidade mínima de pasta fluoretada (um grão de arroz até 3 anos; ervilha dos 3 aos 6 anos).</p>
+<h2>Quando deve ser a primeira consulta?</h2>
+<p>A Sociedade Brasileira de Odontopediatria e a American Academy of Pediatric Dentistry recomendam: <strong>primeiro ano de vida</strong>, ou assim que o primeiro dente erupcionar, o que acontecer primeiro. Aguardar até a criança ter todos os dentes de leite é muito tarde para prevenção eficaz.</p>
+<div class="destaque">
+  <p>"A primeira visita não é para tratar, é para orientar. Ensinamos os pais como higienizar a boca do bebê, como a amamentação e mamadeira afetam os dentes, e já estabelecemos uma relação de confiança com a criança desde cedo."</p>
+  <strong>— Dra. Sindy Alves, Odontopediatra · Instituto Sorrisi</strong>
+</div>
+<h2>Cárie é uma doença infecciosa</h2>
+<p>A cárie é causada por bactérias (principalmente Streptococcus mutans) transmitidas por contato salivar. Beijar a criança na boca, provar a comida com a mesma colher ou limpar a chupeta com a boca são comportamentos que transmitem essas bactérias. Pais com cárie ativa têm maior chance de transmitir ao filho.</p>
+<h2>Mamadeira e cárie de mamadeira</h2>
+<p>A "cárie de mamadeira" é causada pelo contato prolongado dos dentes com líquidos açucarados (leite, sucos) durante o sono. O fluxo salivar diminui à noite e não tampona o ácido. A recomendação é não oferecer mamadeira durante o sono após a erupção dos primeiros dentes — ou escovar os dentes após dar a mamadeira noturna.</p>
+<h2>Flúor: seguro ou perigoso?</h2>
+<p>O flúor em concentração adequada na pasta dental é seguro e eficaz na prevenção de cáries. A fluorose (manchas nos dentes) só ocorre com ingestão excessiva — por isso a quantidade de pasta prescrita por faixa etária é importante (grão de arroz até 3 anos; ervilha dos 3 aos 6 anos).</p>
+<div class="sources">
+  <strong>Fontes:</strong> Sociedade Brasileira de Odontopediatria. Diretrizes Clínicas, 2023 · American Academy of Pediatric Dentistry. "Guideline on Infant Oral Health Care." 2022 · Fejerskov O, Kidd E. "Dental Caries: The Disease and its Clinical Management." Blackwell, 2008 · CFO. Resolução 185/2019
+</div>
+<div class="area-notas">Notas de revisão: _______________________________________________</div>
+</div>
+
+<!-- ============================================================ -->
+<!-- ARTIGO 12 -->
+<!-- ============================================================ -->
+<div class="artigo" id="art12">
+<div class="artigo-cabecalho">
+  <div class="artigo-categoria">Reabilitação Oral <span class="artigo-num">Artigo 12 / 13</span></div>
+  <h1 class="artigo-titulo">Reabilitação Oral:<br>Quando e para Quem é Indicada?</h1>
+  <div class="artigo-meta"><strong>Autora:</strong> Dra. Juliana Sartori, CRO-RJ 33516 · Reabilitação Oral &amp; Prótese · Instituto Sorrisi, Rio das Ostras/RJ</div>
+</div>
+<p>Reabilitação oral é o conjunto de tratamentos que restauram a função mastigatória, a fonética (fala) e a estética do sorriso em pacientes que perderam dentes, têm desgastes severos, disfunção temporomandibular ou necessitam de reconstrução completa da boca.</p>
+<h2>Quando a reabilitação oral é indicada?</h2>
+<ul>
+  <li>Perda de vários dentes (parcial ou total)</li>
+  <li>Desgaste severo por bruxismo ou erosão ácida</li>
+  <li>Colapso de mordida por perda de dentes posteriores</li>
+  <li>Necessidade de reposição de coroas antigas e restaurações extensas</li>
+  <li>Combinação de implantes, próteses e tratamento periodontal</li>
+</ul>
+<h2>Tipos de reabilitação</h2>
+<div class="tipo-card">
+  <div class="tipo-title">Prótese sobre implante</div>
+  <p>Coroa unitária, ponte ou protocolo total (All-on-4/All-on-6) suportados por implantes. Solução mais definitiva e confortável para múltiplos dentes ausentes.</p>
+</div>
+<div class="tipo-card">
+  <div class="tipo-title">Prótese parcial fixa (ponte)</div>
+  <p>Coroas unidas apoiadas sobre dentes naturais desgastados ou implantes. Indicada quando há dentes naturais em condições de servir como apoio.</p>
+</div>
+<div class="tipo-card">
+  <div class="tipo-title">Prótese total removível (dentadura)</div>
+  <p>Para pacientes edêntulos (sem dentes) que não são candidatos ou não desejam implantes. Tecnologia evoluiu — dentaduras modernas são mais confortáveis e estéticas.</p>
+</div>
+<div class="tipo-card">
+  <div class="tipo-title">Reabilitação com coroas e facetas</div>
+  <p>Para reconstrução de dentes com desgaste severo ou forma comprometida. Geralmente em cerâmica ou zircônia para resistência e estética.</p>
+</div>
+<h2>Como é o planejamento?</h2>
+<p>Casos de reabilitação oral complexos exigem planejamento multidisciplinar: pode envolver periodontista (tratamento gengival), implantodontista, ortodontista e protesista. O planejamento digital (wax-up virtual, DSD) permite visualizar o resultado antes de qualquer intervenção.</p>
+<div class="sources">
+  <strong>Fontes:</strong> Misch CE. "Contemporary Implant Dentistry." 3ª ed., Mosby Elsevier, 2008 · Spear FM et al. "Interdisciplinary treatment planning." Quintessence, 2011 · CFO. Resolução 185/2008
+</div>
+<div class="area-notas">Notas de revisão: _______________________________________________</div>
+</div>
+
+<!-- ============================================================ -->
+<!-- ARTIGO 13 -->
+<!-- ============================================================ -->
+<div class="artigo" id="art13">
+<div class="artigo-cabecalho">
+  <div class="artigo-categoria">Prótese Dentária <span class="artigo-num">Artigo 13 / 13</span></div>
+  <h1 class="artigo-titulo">Prótese Dentária:<br>Tipos, Indicações e Cuidados</h1>
+  <div class="artigo-meta"><strong>Autora:</strong> Dra. Juliana Sartori, CRO-RJ 33516 · Reabilitação Oral &amp; Prótese · Instituto Sorrisi, Rio das Ostras/RJ</div>
+</div>
+<p>A prótese dentária é qualquer dispositivo artificial utilizado para repor dentes perdidos e restaurar função mastigatória, estética e fonética. Com a evolução dos materiais e técnicas, as próteses modernas são cada vez mais naturais e confortáveis.</p>
+<h2>Tipos de próteses dentárias</h2>
+<div class="tipo-card">
+  <div class="tipo-title">Coroa unitária</div>
+  <p>Cobre um dente que sofreu fratura, grande destruição por cárie ou tratamento de canal. Feita em porcelana, zircônia ou metal-cerâmica. Aparência idêntica ao dente natural.</p>
+</div>
+<div class="tipo-card">
+  <div class="tipo-title">Ponte fixa</div>
+  <p>Três ou mais coroas unidas para repor dente(s) ausente(s) apoiando-se sobre dentes vizinhos. Os dentes de apoio precisam ser desgastados. Solução quando não há implante disponível.</p>
+</div>
+<div class="tipo-card">
+  <div class="tipo-title">Prótese parcial removível (PPR)</div>
+  <p>Prótese que substitui vários dentes ausentes, retida por ganchos nos dentes remanescentes. Removível — o paciente tira para limpar. Opção de menor custo.</p>
+</div>
+<div class="tipo-card">
+  <div class="tipo-title">Prótese total (dentadura)</div>
+  <p>Substitui todos os dentes de um arco (superior ou inferior) ou de ambos. Pode ser convencional (mucossuportada) ou implantossuportada (prótese sobre implantes).</p>
+</div>
+<div class="tipo-card">
+  <div class="tipo-title">Protocolo All-on-4 / All-on-6</div>
+  <p>Prótese fixa total suportada por 4 ou 6 implantes. Permite reabilitar uma arcada completa sem dentes com implantes, mastigação e estética similares a dentes naturais. Custo elevado, resultado excelente.</p>
+</div>
+<h2>Materiais mais usados atualmente</h2>
+<ul>
+  <li><strong>Zircônia:</strong> material cerâmico de alta resistência, excelente estética, cada vez mais utilizado para coroas, pontes e próteses sobre implante.</li>
+  <li><strong>Porcelana feldspática:</strong> translucidez natural superior, indicada para facetas e coroas anteriores com alta demanda estética.</li>
+  <li><strong>Dissilicato de lítio (e.max):</strong> combinação de resistência e estética para coroas e facetas.</li>
+  <li><strong>Metal-cerâmica:</strong> núcleo metálico com revestimento de porcelana. Resistente, menor custo, mas com linha escura na margem com o tempo.</li>
+</ul>
+<h2>Cuidados com as próteses</h2>
+<ul>
+  <li>Próteses fixas (coroas, pontes): higiene igual a dentes naturais — escova e fio dental (fio superfloss ou escova interdental para pontes).</li>
+  <li>Próteses removíveis: retirar para limpar, escovar com escova própria e deixar em solução higienizante durante a noite.</li>
+  <li>Revisão anual com o dentista para verificar adaptação, desgaste e saúde dos dentes e gengiva de suporte.</li>
+  <li>Evitar morder alimentos muito duros (coco, caroços) com coroas de porcelana.</li>
+</ul>
+<div class="sources">
+  <strong>Fontes:</strong> Rosenstiel SF et al. "Contemporary Fixed Prosthodontics." 5ª ed., Elsevier, 2015 · Misch CE. "Contemporary Implant Dentistry." Mosby Elsevier, 2008 · CFO. Resolução sobre especialidades odontológicas
+</div>
+<div class="area-notas">Notas de revisão: _______________________________________________</div>
+</div>
+
+</body>
+</html>

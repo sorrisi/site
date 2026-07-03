@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Transforme seu sorriso — Instituto Sorrisi | Rio das Ostras/RJ</title>
+<meta name="description" content="Implante, Invisalign e Lentes de Contato Dental em Rio das Ostras/RJ. Avaliação com a Dra. Vanessa Scotta — Invisalign Doctor. Agende pelo WhatsApp: (22) 99849-6156." />
+<meta property="og:type" content="website" />
+<meta property="og:locale" content="pt_BR" />
+<meta property="og:title" content="Transforme seu sorriso — Instituto Sorrisi" />
+<meta property="og:description" content="Implante, Invisalign e Lentes de Contato Dental em Rio das Ostras/RJ. Agende sua avaliação pelo WhatsApp." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,400;0,600;0,700;0,800;0,900&family=Playfair+Display:ital,wght@0,500;0,600;1,500&display=swap');
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --pink:#E388AD; --pink-dark:#c4648f; --navy:#3C1970; --navy-dark:#2a0f52;
+  --teal:#20A3C7; --teal-light:#5cbfda; --cream:#F7F2E4;
+  --text:#3a3a5c; --text-light:#7a7a9a; --wa:#25D366; --wa-dark:#1eb355;
+}
+html{scroll-behavior:smooth}
+body{font-family:'Nunito',sans-serif;color:var(--text);background:#fff;overflow-x:hidden}
+img{display:block;max-width:100%}
+.wrap{max-width:1080px;margin:0 auto;padding:0 5vw}
+
+/* ── Botão WhatsApp (CTA único da página) ── */
+.btn-wa{display:inline-flex;align-items:center;justify-content:center;gap:0.6rem;
+  background:var(--wa);color:#fff;font-weight:800;font-size:1rem;text-decoration:none;
+  padding:1rem 2rem;border-radius:50px;box-shadow:0 6px 20px rgba(37,211,102,0.35);
+  transition:transform .15s, background .15s}
+.btn-wa:hover{background:var(--wa-dark);transform:translateY(-2px)}
+.btn-wa svg{flex:none}
+.btn-wa.sm{font-size:0.85rem;padding:0.65rem 1.4rem;box-shadow:none}
+.btn-wa.ghost{background:transparent;border:2px solid var(--wa);color:var(--wa-dark);box-shadow:none}
+
+/* ── Barra topo ── */
+.topbar{position:sticky;top:0;z-index:100;background:var(--navy);display:flex;align-items:center;
+  justify-content:space-between;padding:0.6rem 5vw;box-shadow:0 2px 12px rgba(0,0,0,0.18)}
+.topbar img{height:44px;width:auto}
+
+/* ── Hero ── */
+.hero{background:linear-gradient(160deg,var(--navy) 55%,var(--navy-dark));color:#fff;
+  padding:3.5rem 5vw 4.5rem;text-align:center;position:relative;overflow:hidden}
+.hero::after{content:'';position:absolute;inset:0;pointer-events:none;
+  background-image:radial-gradient(circle,rgba(32,163,199,0.14) 1px,transparent 1px);background-size:36px 36px}
+.hero>*{position:relative;z-index:1}
+.hero-kicker{display:inline-block;background:rgba(227,136,173,0.16);border:1px solid rgba(227,136,173,0.45);
+  color:var(--pink);font-size:0.7rem;font-weight:800;letter-spacing:0.14em;text-transform:uppercase;
+  padding:0.4rem 1.1rem;border-radius:50px;margin-bottom:1.4rem}
+.hero h1{font-family:'Playfair Display',serif;font-weight:600;font-size:clamp(1.9rem,5.5vw,3.2rem);
+  line-height:1.15;margin-bottom:1rem}
+.hero h1 em{color:var(--pink);font-style:italic}
+.hero p{font-size:clamp(0.95rem,2.5vw,1.1rem);color:rgba(255,255,255,0.82);max-width:560px;margin:0 auto 1.8rem}
+.trust{display:flex;justify-content:center;gap:2rem;flex-wrap:wrap;margin-top:2.2rem}
+.trust div{text-align:center}
+.trust strong{display:block;font-size:1.25rem;font-weight:900;color:var(--teal-light)}
+.trust span{font-size:0.62rem;letter-spacing:0.1em;text-transform:uppercase;color:rgba(255,255,255,0.55);font-weight:700}
+
+/* ── Seções ── */
+.sec{padding:4.5rem 0}
+.sec-title{font-family:'Playfair Display',serif;font-size:clamp(1.5rem,4.5vw,2.3rem);color:var(--navy);
+  text-align:center;line-height:1.2;margin-bottom:0.6rem}
+.sec-title em{color:var(--pink-dark);font-style:italic}
+.sec-sub{text-align:center;color:var(--text-light);font-size:0.95rem;max-width:520px;margin:0 auto 3rem}
+
+/* ── Tratamentos ── */
+.treats{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(290px,100%),1fr));gap:1.5rem}
+.treat{background:#fff;border-radius:18px;overflow:hidden;box-shadow:0 8px 32px rgba(60,25,112,0.10);
+  display:flex;flex-direction:column;border:1px solid rgba(60,25,112,0.06)}
+.treat img{height:200px;width:100%;object-fit:cover}
+.treat-body{padding:1.6rem 1.5rem 1.8rem;display:flex;flex-direction:column;flex:1}
+.treat-tag{font-size:0.62rem;font-weight:800;letter-spacing:0.12em;text-transform:uppercase;color:var(--teal);margin-bottom:0.4rem}
+.treat h3{font-family:'Playfair Display',serif;font-size:1.3rem;color:var(--navy);margin-bottom:0.6rem}
+.treat p{font-size:0.86rem;color:var(--text-light);line-height:1.65;margin-bottom:1rem}
+.treat ul{list-style:none;margin-bottom:1.4rem}
+.treat li{font-size:0.82rem;padding-left:1.4rem;position:relative;margin-bottom:0.45rem;color:var(--text)}
+.treat li::before{content:'✓';position:absolute;left:0;color:var(--wa);font-weight:900}
+.treat .btn-wa{margin-top:auto}
+
+/* ── Antes / Depois ── */
+.bg-cream{background:var(--cream)}
+.ba-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(260px,100%),1fr));gap:1.25rem}
+.ba{border-radius:16px;overflow:hidden;position:relative;box-shadow:0 6px 24px rgba(60,25,112,0.12)}
+.ba img{width:100%;height:240px;object-fit:cover}
+.ba figcaption{position:absolute;left:0;right:0;bottom:0;background:linear-gradient(transparent,rgba(42,15,82,0.88));
+  color:#fff;font-size:0.78rem;font-weight:700;padding:1.6rem 1rem 0.8rem;letter-spacing:0.04em}
+
+/* ── Depoimentos ── */
+.deps{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(280px,100%),1fr));gap:1.25rem}
+.dep{background:#fff;border-radius:16px;padding:1.6rem;box-shadow:0 6px 24px rgba(60,25,112,0.08);border:1px solid rgba(227,136,173,0.14)}
+.dep .stars{color:#fbbc05;font-size:0.95rem;margin-bottom:0.7rem;letter-spacing:0.1em}
+.dep p{font-size:0.85rem;line-height:1.7;color:var(--text);font-style:italic;margin-bottom:1rem}
+.dep .who{font-size:0.78rem;font-weight:800;color:var(--navy)}
+.dep .src{font-size:0.68rem;color:var(--text-light)}
+.gbadge{display:flex;align-items:center;justify-content:center;gap:0.8rem;margin-top:2.2rem;flex-wrap:wrap}
+.gbadge .num{font-family:'Playfair Display',serif;font-weight:600;font-size:1.7rem;color:var(--navy)}
+.gbadge .st{color:#fbbc05;font-size:1.05rem}
+.gbadge .lbl{font-size:0.72rem;color:var(--text-light)}
+
+/* ── Dra ── */
+.dra{display:grid;grid-template-columns:220px 1fr;gap:2.5rem;align-items:center}
+.dra img{width:220px;height:260px;object-fit:cover;border-radius:18px;box-shadow:0 10px 32px rgba(60,25,112,0.2)}
+.dra h3{font-family:'Playfair Display',serif;font-size:1.5rem;color:var(--navy);margin-bottom:0.3rem}
+.dra .cred{font-size:0.78rem;font-weight:800;color:var(--teal);letter-spacing:0.06em;margin-bottom:1rem}
+.dra p{font-size:0.9rem;line-height:1.75;color:var(--text-light);margin-bottom:0.8rem}
+.chips{display:flex;gap:0.5rem;flex-wrap:wrap;margin-top:1rem}
+.chip{font-size:0.68rem;font-weight:800;color:var(--navy);background:rgba(227,136,173,0.16);
+  border:1px solid rgba(227,136,173,0.4);padding:0.35rem 0.9rem;border-radius:50px}
+
+/* ── Passos ── */
+.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(240px,100%),1fr));gap:1.5rem;counter-reset:passo}
+.step{text-align:center;padding:1.5rem 1rem}
+.step .n{width:52px;height:52px;border-radius:50%;background:var(--pink);color:#fff;font-weight:900;font-size:1.3rem;
+  display:flex;align-items:center;justify-content:center;margin:0 auto 1rem}
+.step h4{font-size:1rem;color:var(--navy);margin-bottom:0.4rem}
+.step p{font-size:0.82rem;color:var(--text-light);line-height:1.6}
+
+/* ── CTA final ── */
+.final{background:linear-gradient(140deg,var(--navy),var(--navy-dark));color:#fff;text-align:center;padding:4.5rem 5vw}
+.final h2{font-family:'Playfair Display',serif;font-size:clamp(1.6rem,5vw,2.4rem);margin-bottom:0.8rem}
+.final h2 em{color:var(--pink);font-style:italic}
+.final p{color:rgba(255,255,255,0.75);font-size:0.95rem;margin-bottom:1.8rem}
+.final .end{font-size:0.8rem;color:rgba(255,255,255,0.55);margin-top:2rem;line-height:1.8}
+
+/* ── Footer mínimo ── */
+footer{background:var(--navy-dark);color:rgba(255,255,255,0.45);font-size:0.7rem;text-align:center;padding:1.4rem 5vw 5.5rem}
+footer a{color:rgba(255,255,255,0.45)}
+
+/* ── Barra fixa inferior (mobile) + flutuante (desktop) ── */
+.stickybar{position:fixed;bottom:0;left:0;right:0;z-index:120;background:#fff;
+  box-shadow:0 -4px 20px rgba(0,0,0,0.15);padding:0.6rem 5vw;display:flex;gap:0.75rem;align-items:center}
+.stickybar .txt{font-size:0.72rem;font-weight:800;color:var(--navy);line-height:1.3;flex:1}
+.wa-float{display:none}
+@media (min-width: 861px){
+  .stickybar{display:none}
+  footer{padding-bottom:1.4rem}
+  .wa-float{display:flex;position:fixed;bottom:1.5rem;right:1.5rem;z-index:120;width:60px;height:60px;
+    border-radius:50%;background:var(--wa);align-items:center;justify-content:center;
+    box-shadow:0 6px 20px rgba(0,0,0,0.3);transition:transform .15s}
+  .wa-float:hover{transform:scale(1.08)}
+}
+@media (max-width: 700px){
+  .dra{grid-template-columns:1fr;text-align:center}
+  .dra img{margin:0 auto}
+  .chips{justify-content:center}
+  .sec{padding:3.5rem 0}
+}
+</style>
+</head>
+<body>
+
+<!-- BARRA TOPO -->
+<div class="topbar">
+  <img src="logo-white.png" alt="Instituto Sorrisi">
+  <a class="btn-wa sm" href="https://wa.me/5522998496156?text=Ol%C3%A1%21%20Quero%20agendar%20uma%20avalia%C3%A7%C3%A3o%20%F0%9F%98%8A" target="_blank" rel="noopener noreferrer">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="#fff"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+    Agendar
+  </a>
+</div>
+
+<!-- HERO -->
+<section class="hero">
+  <span class="hero-kicker">Implante · Invisalign · Lentes de Contato Dental</span>
+  <h1>O sorriso que você adia<br>pode começar <em>hoje.</em></h1>
+  <p>Avaliação com equipe especialista em Rio das Ostras. Você sai da primeira consulta sabendo exatamente o que precisa, quanto custa e por onde começar.</p>
+  <a class="btn-wa" href="https://wa.me/5522998496156?text=Ol%C3%A1%21%20Quero%20agendar%20uma%20avalia%C3%A7%C3%A3o%20%F0%9F%98%8A" target="_blank" rel="noopener noreferrer">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="#fff"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+    Agendar minha avaliação
+  </a>
+  <div class="trust">
+    <div><strong>4,9★</strong><span>no Google</span></div>
+    <div><strong>2.000+</strong><span>pacientes</span></div>
+    <div><strong>11 anos</strong><span>de história</span></div>
+    <div><strong>Invisalign</strong><span>Doctor</span></div>
+  </div>
+</section>
+
+<!-- TRATAMENTOS -->
+<section class="sec">
+  <div class="wrap">
+    <h2 class="sec-title">Qual sorriso você quer <em>recuperar?</em></h2>
+    <p class="sec-sub">Três caminhos, um mesmo destino: você sorrindo sem se esconder.</p>
+    <div class="treats">
+      <div class="treat">
+        <img src="fotos/tratamento-implante.jpeg" alt="Implante dentário no Instituto Sorrisi" loading="lazy">
+        <div class="treat-body">
+          <div class="treat-tag">Para quem perdeu dentes</div>
+          <h3>Implante Dentário</h3>
+          <p>Volte a mastigar, falar e sorrir com segurança — com resultado fixo e natural.</p>
+          <ul>
+            <li>Solução definitiva e estável</li>
+            <li>Planejamento digital do caso</li>
+            <li>Da cirurgia à prótese no mesmo lugar</li>
+          </ul>
+          <a class="btn-wa sm" href="https://wa.me/5522998496156?text=Ol%C3%A1%21%20Tenho%20interesse%20em%20implante%20dent%C3%A1rio%20e%20quero%20agendar%20uma%20avalia%C3%A7%C3%A3o" target="_blank" rel="noopener noreferrer">Avaliar meu caso</a>
+        </div>
+      </div>
+      <div class="treat">
+        <img src="fotos/invisalign-antes-depois.jpg" alt="Resultado de tratamento com Invisalign" loading="lazy">
+        <div class="treat-body">
+          <div class="treat-tag">Para alinhar sem aparelho fixo</div>
+          <h3>Invisalign&reg;</h3>
+          <p>Alinhadores transparentes, removíveis e confortáveis — ninguém percebe que você está em tratamento.</p>
+          <ul>
+            <li>Clínica credenciada Invisalign Doctor</li>
+            <li>Simulação do resultado antes de começar</li>
+            <li>Menos consultas de urgência que o aparelho fixo</li>
+          </ul>
+          <a class="btn-wa sm" href="https://wa.me/5522998496156?text=Ol%C3%A1%21%20Tenho%20interesse%20em%20Invisalign%20e%20quero%20agendar%20uma%20avalia%C3%A7%C3%A3o" target="_blank" rel="noopener noreferrer">Avaliar meu caso</a>
+        </div>
+      </div>
+      <div class="treat">
+        <img src="fotos/antes-depois-estetica.jpg" alt="Lentes de contato dental — antes e depois" loading="lazy">
+        <div class="treat-body">
+          <div class="treat-tag">Para transformar a estética</div>
+          <h3>Lentes de Contato Dental</h3>
+          <p>Facetas ultrafinas que corrigem cor, formato e pequenos desalinhamentos em poucas sessões.</p>
+          <ul>
+            <li>Resultado natural e harmonioso</li>
+            <li>Planejamento do sorriso caso a caso</li>
+            <li>Transformação em poucas semanas</li>
+          </ul>
+          <a class="btn-wa sm" href="https://wa.me/5522998496156?text=Ol%C3%A1%21%20Tenho%20interesse%20em%20lentes%20de%20contato%20dental%20e%20quero%20agendar%20uma%20avalia%C3%A7%C3%A3o" target="_blank" rel="noopener noreferrer">Avaliar meu caso</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ANTES E DEPOIS -->
+<section class="sec bg-cream">
+  <div class="wrap">
+    <h2 class="sec-title">Resultados <em>reais</em>, de pacientes reais</h2>
+    <p class="sec-sub">Casos tratados aqui na clínica, em Rio das Ostras.</p>
+    <div class="ba-grid">
+      <figure class="ba"><img src="fotos/antes-depois-ortodontia.jpg" alt="Antes e depois — ortodontia" loading="lazy"><figcaption>Ortodontia</figcaption></figure>
+      <figure class="ba"><img src="fotos/invisalign-antes-depois.jpg" alt="Antes e depois — Invisalign" loading="lazy"><figcaption>Invisalign&reg;</figcaption></figure>
+      <figure class="ba"><img src="fotos/antes-depois-estetica.jpg" alt="Antes e depois — lentes de contato dental" loading="lazy"><figcaption>Lentes de Contato Dental</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<!-- DEPOIMENTOS -->
+<section class="sec">
+  <div class="wrap">
+    <h2 class="sec-title">Quem já passou por aqui <em>recomenda</em></h2>
+    <p class="sec-sub">Avaliações públicas de pacientes no Google.</p>
+    <div class="deps">
+      <div class="dep">
+        <div class="stars">★★★★★</div>
+        <p>"Meu filho está em tratamento com Invisalign e o alinhamento foi visível e surpreendente desde o primeiro mês!"</p>
+        <div class="who">Anne K.</div><div class="src">Invisalign&reg; · Google</div>
+      </div>
+      <div class="dep">
+        <div class="stars">★★★★★</div>
+        <p>"A Dra. Vanessa Scotta é uma excelente profissional e a clínica é muito aconchegante e bem higiênica. Recomendo muito!!"</p>
+        <div class="who">Iasmin D.</div><div class="src">Paciente · Google</div>
+      </div>
+      <div class="dep">
+        <div class="stars">★★★★★</div>
+        <p>"Clínica muito organizada, com grande carinho, paciência e assertividade. Fiquei muito satisfeita!"</p>
+        <div class="who">G. M.</div><div class="src">Paciente · Google</div>
+      </div>
+    </div>
+    <div class="gbadge">
+      <span class="num">4,9</span><span class="st">★★★★★</span>
+      <span class="lbl">em avaliações no Google ·
+        <a href="https://www.google.com/maps/place/Instituto+Sorrisi+Odontologia+e+Sa%C3%BAde" target="_blank" rel="noopener noreferrer" style="color:var(--teal);font-weight:800;">ver todas →</a>
+      </span>
+    </div>
+  </div>
+</section>
+
+<!-- DRA -->
+<section class="sec bg-cream">
+  <div class="wrap">
+    <div class="dra">
+      <img src="fotos/Dra-Vanessa.jpg" alt="Dra. Vanessa Scotta" loading="lazy">
+      <div>
+        <h3>Dra. Vanessa Scotta</h3>
+        <div class="cred">CEO · Ortodontista · CRO-RJ 40090 · EPAO-RJ 7588</div>
+        <p>Há 11 anos à frente do Instituto Sorrisi, a Dra. Vanessa lidera uma equipe multidisciplinar que já cuidou de mais de 2.000 pacientes em Rio das Ostras — do primeiro diagnóstico ao sorriso pronto, tudo na mesma clínica.</p>
+        <div class="chips">
+          <span class="chip">Invisalign Doctor</span>
+          <span class="chip">Equipe multidisciplinar</span>
+          <span class="chip">Atendimento adulto e infantil</span>
+          <span class="chip">Biossegurança rigorosa</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- COMO FUNCIONA -->
+<section class="sec">
+  <div class="wrap">
+    <h2 class="sec-title">Simples assim: <em>3 passos</em></h2>
+    <p class="sec-sub">Do primeiro contato ao plano de tratamento.</p>
+    <div class="steps">
+      <div class="step">
+        <div class="n">1</div>
+        <h4>Chame no WhatsApp</h4>
+        <p>Clique em qualquer botão verde da página e fale direto com nossa equipe.</p>
+      </div>
+      <div class="step">
+        <div class="n">2</div>
+        <h4>Venha para a avaliação</h4>
+        <p>Exame completo com a especialista, tirando todas as suas dúvidas.</p>
+      </div>
+      <div class="step">
+        <div class="n">3</div>
+        <h4>Receba seu plano</h4>
+        <p>Você sai sabendo o tratamento indicado, prazos e valores — sem surpresa.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA FINAL -->
+<section class="final">
+  <h2>Pare de adiar.<br><em>Seu sorriso agradece.</em></h2>
+  <p>Atendemos de segunda a sexta, 09h–12h e 14h–18h30.</p>
+  <a class="btn-wa" href="https://wa.me/5522998496156?text=Ol%C3%A1%21%20Quero%20agendar%20uma%20avalia%C3%A7%C3%A3o%20%F0%9F%98%8A" target="_blank" rel="noopener noreferrer">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="#fff"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+    Agendar pelo WhatsApp
+  </a>
+  <p class="end">📍 Estr. Prof. Leandro Faria Sarzedas, 369 (Galeria Atlântica), Sala 6, 2º Piso<br>Atlântica · Rio das Ostras/RJ · (22) 99849-6156</p>
+</section>
+
+<footer>
+  © 2026 Instituto Sorrisi Odontologia e Saúde · Dra. Vanessa C. Barros Scotta · CRO-RJ 40090 · <a href="privacidade.html">Privacidade &amp; LGPD</a>
+</footer>
+
+<!-- BARRA FIXA (mobile) -->
+<div class="stickybar">
+  <div class="txt">Agende sua avaliação<br><span style="font-weight:600;color:var(--text-light);">resposta rápida no WhatsApp</span></div>
+  <a class="btn-wa sm" href="https://wa.me/5522998496156?text=Ol%C3%A1%21%20Quero%20agendar%20uma%20avalia%C3%A7%C3%A3o%20%F0%9F%98%8A" target="_blank" rel="noopener noreferrer">💬 Agendar</a>
+</div>
+
+<!-- FLUTUANTE (desktop) -->
+<a class="wa-float" href="https://wa.me/5522998496156?text=Ol%C3%A1%21%20Quero%20agendar%20uma%20avalia%C3%A7%C3%A3o%20%F0%9F%98%8A" target="_blank" rel="noopener noreferrer" aria-label="Falar no WhatsApp">
+  <svg width="28" height="28" viewBox="0 0 24 24" fill="#fff"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+</a>
+
+</body>
+</html>
